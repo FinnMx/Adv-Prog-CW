@@ -1,0 +1,5 @@
+﻿  Storage.cpp
+C:\Users\New Owner\Desktop\CORRECTAdv Programming coursework\Storage.cpp(11,24): warning C4129: 'B': unrecognized character escape sequence
+C:\Users\New Owner\Desktop\CORRECTAdv Programming coursework\Storage.cpp(12,24): warning C4129: 'C': unrecognized character escape sequence
+C:\Users\New Owner\Desktop\CORRECTAdv Programming coursework\Storage.cpp(30,16): warning C4930: 'std::ifstream file(void)': prototyped function not called (was a variable definition intended?)
+  Adv Programming coursework.vcxproj -> C:\Users\New Owner\Desktop\CORRECTAdv Programming coursework\x64\Debug\Adv Programming coursework.exe
