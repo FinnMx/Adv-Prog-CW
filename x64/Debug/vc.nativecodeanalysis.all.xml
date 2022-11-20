@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?><DEFECTS><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\New Owner\Desktop\CORRECTAdv Programming coursework\</FILEPATH>
+      <FILENAME>Vehicle.h</FILENAME>
+      <LINE>40</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Vehicle::VehicleAge' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Vehicle::{ctor}</FUNCTION>
+    <DECORATED>??0Vehicle@@QEAA@XZ</DECORATED>
+    <FUNCLINE>40</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Vehicle::VehicleAge</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\New Owner\Desktop\CORRECTAdv Programming coursework\</FILEPATH>
+      <FILENAME>PointOfService.cpp</FILENAME>
+      <LINE>4</LINE>
+      <COLUMN>16</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'PointOfService::Model' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>PointOfService::{ctor}</FUNCTION>
+    <DECORATED>??0PointOfService@@QEAA@XZ</DECORATED>
+    <FUNCLINE>4</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>PointOfService::Model</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\New Owner\Desktop\CORRECTAdv Programming coursework\</FILEPATH>
+      <FILENAME>Record.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Record::RentalNum' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Record::{ctor}</FUNCTION>
+    <DECORATED>??0Record@@QEAA@XZ</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>Record::RentalNum</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT></DEFECTS>

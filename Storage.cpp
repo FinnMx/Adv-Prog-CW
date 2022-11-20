@@ -8,8 +8,8 @@
 #include <list>
 
 Storage::Storage() {
-	Storage::ReadFromDisk("\Bikes");
-	Storage::ReadFromDisk("\Cars");
+	Storage::ReadFromDisk("Bikes");
+	Storage::ReadFromDisk("Cars");
 }
 
 Storage::~Storage() {
@@ -27,7 +27,6 @@ void Storage::DisplayAllVehicles() {
 
 void Storage::ReadFromDisk(std::string dir) {
 	//routine to get a list of each doccument in the vehicle list folder using c++ 17 filesystem lib...
-	std::ifstream file();
 	std::string tmp;
 	char tmpval[6][31];
 	for (auto const& dir_entry : fs::directory_iterator{ dir }) {
@@ -52,17 +51,8 @@ void Storage::ReadFromDisk(std::string dir) {
 void Storage::WriteToDisk() {
 	std::list<Vehicle*>::iterator it(vehicles.begin());
 	while (it != vehicles.end()) {
-		std::string bikeDir = BikeDir;
-		std::string carDir = CarDir;
-		//std::ofstream out("");
-		if (typeid(**it) == typeid(Bike)) {
-			std::ofstream out(bikeDir.append((**it).GetReg()).append(".txt"));
-			out << (**it++);
-		}
-		if (typeid(**it) == typeid(Car)) {
-			std::ofstream out(carDir.append((**it).GetReg()).append(".txt"));
-			out << (**it++);
-		}
+		std::ofstream out((**it).ReturnFilePath());
+		out << (**it++);
 	}
 }
 
@@ -84,7 +74,6 @@ void Storage::AddVehicle(char model[31], char make[31], char reg[9], int age, in
 }
 
 void Storage::RemoveVehicle(const char reg[9]) {
-	//ALMOST FUNCTIONAL, NEED TO REMOVE FROM FILE....
 	std::list<Vehicle*>::iterator it(vehicles.begin());
 	while (it != vehicles.end()) {
 		if (strcmp((**it).GetReg(), reg) == 0) {
