@@ -6,6 +6,7 @@
 #include <string>
 #include <fstream>
 #include <list>
+#include <vector>
 
 Storage::Storage() {
 	Storage::ReadFromDisk("Bikes");
@@ -17,12 +18,12 @@ Storage::~Storage() {
 }
 
 void Storage::DisplayAllVehicles() {
-	int index(0);
 	std::list<Vehicle*>::iterator it(vehicles.begin());
 	while (it != vehicles.end()) {
 		std::cout << ++index << ")";
 		(**it++).DisplayToMenu();
 	}
+	index = 0;
 }
 
 void Storage::ReadFromDisk(std::string dir) {
@@ -94,10 +95,45 @@ void Storage::SortByReg() {
 	vehicles.sort(CompareReg());
 }
 
-void Storage::SearchForCar(int op) {
-
+void Storage::SearchByReg(char reg[9]) {
+	std::list<Vehicle*>::iterator it(vehicles.begin());
+	while (it != vehicles.end()) {
+		if (strcmp((**it).GetReg(), reg) == 0) {
+			ReturnedFromSearch.push_back(*it);
+		}
+		it++;
+	}
 }
 
-void Storage::SearchForBike(int op) {
+void Storage::SearchBySeats(int seats) {
+	std::list<Vehicle*>::iterator it(vehicles.begin());
+	while (it != vehicles.end()) {
+		if (typeid(**it) == typeid(Car) && (**it).GetExtra2() == seats) {
+			ReturnedFromSearch.push_back(*it);
+		}
+		it++;
+	}
+}
 
+void Storage::SearchByDoors(int doors) {
+	std::list<Vehicle*>::iterator it(vehicles.begin());
+	while (it != vehicles.end()) {
+		if (typeid(**it) == typeid(Car) && (**it).GetExtra1() == doors) {
+			ReturnedFromSearch.push_back(*it);
+		}
+		it++;
+	}
+}
+
+void Storage::DisplaySearchResults() {
+	for(Vehicle* var : ReturnedFromSearch)
+	{
+		std::cout << ++index << ")";
+		var->DisplayToSearchMenu();
+	}
+	index = 0;
+}
+
+void Storage::DisplayVehicleInfo(int op) {
+	ReturnedFromSearch[op-1]->DisplaySpecifics();
 }

@@ -27,8 +27,18 @@ void Vehicle::DisplayToMenu() {
 	std::cout << "   " << VehicleReg << "                   " << std::fixed << std::setprecision(2) << ReturnCost() << "                  " << GetType() << std::endl;
 }
 
+void Vehicle::DisplayToSearchMenu() {
+	std::cout << "   " << VehicleReg << "              " << std::fixed << std::setprecision(2) << ReturnCost() << "           " << VehicleMake << "        " << VehicleModel << std::endl;
+}
+
 const std::string Vehicle::ReturnFilePath() {
 	return GetType().append("s/").append(VehicleReg).append(".txt");
+}
+
+void Vehicle::DisplaySpecifics() {
+	system("CLS");
+	std::cout << VehicleReg << ": " << VehicleMake << " " << VehicleModel << "\n--------------------" << std::endl;
+	std::cout << "Cost Per Day: " << std::fixed << std::setprecision(2) << ReturnCost() << "\nTotal Rented Income: " << "\nTotal Days Rented" << std::endl;
 }
 
 

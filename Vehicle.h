@@ -8,8 +8,6 @@
 class Vehicle
 {
 public:
-	//Vehicle(std::string Model, std::string Make, std::string Reg, int Age);
-	//Vehicle();
 	~Vehicle();
 	void SetValues(char* Model, char* Make, char* Reg, int Age);
 
@@ -20,15 +18,20 @@ public:
 	friend std::ostream& operator<<(std::ostream& os, Vehicle& rhs);
 
 	void GetValues();
-	void DisplayToMenu();
-	virtual double ReturnCost() = 0;
 
+	void DisplayToMenu();
+	void DisplayToSearchMenu();
+	void DisplaySpecifics();
+
+	virtual double ReturnCost() = 0;
+	virtual int GetExtra1() = 0;
+	virtual int GetExtra2() = 0;
 	const std::string ReturnFilePath();
+
+
 
 protected:
 	virtual std::string GetType() = 0;
-	virtual int GetExtra1() = 0;
-	virtual int GetExtra2() = 0;
 
 private:
 	int RECORD_SIZE = 1;

@@ -11,6 +11,7 @@ PointOfService::~PointOfService() {
 
 void PointOfService::DisplayMenu(Storage& storage) {
 	while (Exit == false) {
+		system("CLS");
 		std::cout << "Vehicle Rental System\n---------------------\n" << std::endl;
 		std::cout << "Registration Number          Cost Per Day          Vehicle Type" << std::endl;
 		std::cout << "-------------------          ------------          ------------" << std::endl;
@@ -54,8 +55,49 @@ void PointOfService::HandleUserInput(Storage& storage) {
 void PointOfService::CarSearchMenu(Storage& storage) {
 	std::cout << "Search for a car by:\n--------------------\n1) Registration number\n2) Number of seats\n3) Number of doors\n9) Return to main menu" << std::endl;
 	std::cin >> Input;
-	if(Input != 9)
-		storage.SearchForCar(Input);
+	switch (Input) {
+	case 1:
+		DisplaySearchByReg();
+		storage.SearchByReg(Reg);
+		break;
+	case 2:
+		DisplaySearchBySeats();
+		storage.SearchBySeats(Extra2);
+		break;
+	case 3:
+		DisplaySearchByDoors();
+		storage.SearchByDoors(Extra1);
+		break;
+	default:
+		return;
+		break;
+	}
+	DisplaySearchMenu(storage);
+}
+
+void PointOfService::DisplaySearchMenu(Storage& storage) {
+	std::cout << "\nRegistration Number" << "     " << "Cost Per Day" << "	    " << "Make" << "        " << "Model" << std::endl;
+	std::cout << "-------------------" << "     " << "------------" << "	    " << "----" << "        " << "-----" << std::endl;
+	storage.DisplaySearchResults();
+	std::cout << "\nPlease enter a number to choose the vehicle, or any key to return to main menu: " << std::endl;
+	std::cin >> Input;
+	storage.DisplayVehicleInfo(Input);
+}
+
+void PointOfService::DisplaySearchByReg() {
+	std::cout << "Please enter the registration number of the vehicle:" << std::endl;
+	std::cin.ignore();
+	std::cin.getline(Reg, sizeof(Reg));
+}
+
+void PointOfService::DisplaySearchBySeats() {
+	std::cout << "Please enter the number of seats in the vehicle:" << std::endl;
+	std::cin >> Extra2;
+}
+
+void PointOfService::DisplaySearchByDoors() {
+	std::cout << "Please enter the number of doors in the vehicle:" << std::endl;
+	std::cin >> Extra1;
 }
 
 void PointOfService::HandleVehicleInput() {

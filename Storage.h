@@ -2,6 +2,7 @@
 #include "Vehicle.h"
 #include "Bike.h"
 #include "Car.h"
+#include <vector>
 
 namespace fs = std::experimental::filesystem;
 
@@ -12,6 +13,9 @@ public:
 	~Storage();
 
 	void DisplayAllVehicles();
+	void DisplaySearchResults();
+	void DisplayVehicleInfo(int op);
+
 	void ReadFromDisk(std::string dir);
 	void WriteToDisk();
 
@@ -21,13 +25,17 @@ public:
 	void SortByCost();
 	void SortByReg();
 
-	void SearchForCar(int op);
-	void SearchForBike(int op);
+	void SearchByReg(char reg[9]);
+	void SearchBySeats(int seats);
+	void SearchByDoors(int doors);
 
 private:
 	const std::string BikeDir = "Bikes/";
 	const std::string CarDir = "Cars/";
 
 	std::list<Vehicle*> vehicles;
+	std::vector<Vehicle*> ReturnedFromSearch;
+
+	int index = 0;
 
 };

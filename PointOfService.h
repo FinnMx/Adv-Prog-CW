@@ -11,6 +11,11 @@ public:
 
 	void CarSearchMenu(Storage& storage);
 	void BikeSearchMenu(Storage& storage);
+	void DisplaySearchMenu(Storage& storage);
+
+	void DisplaySearchByReg();
+	void DisplaySearchBySeats();
+	void DisplaySearchByDoors();
 
 	void AddVehicle(Storage& storage);
 	void HandleVehicleInput();
