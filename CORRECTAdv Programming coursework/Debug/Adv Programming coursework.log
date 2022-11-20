@@ -1,0 +1,3 @@
+﻿  Storage.cpp
+C:\Users\Finn\OneDrive - Sheffield Hallam University\year 2 computer science\adv prog cw\Adv Programming coursework\Storage.cpp(21,16): warning C4930: 'std::ifstream file(void)': prototyped function not called (was a variable definition intended?)
+  Adv Programming coursework.vcxproj -> C:\Users\Finn\OneDrive - Sheffield Hallam University\year 2 computer science\adv prog cw\Adv Programming coursework\Debug\Adv Programming coursework.exe
