@@ -52,15 +52,15 @@ void Storage::ReadFromDisk(std::string dir) {
 void Storage::WriteToDisk() {
 	std::list<Vehicle*>::iterator it(vehicles.begin());
 	while (it != vehicles.end()) {
-		std::string BikeDir = "Bikes/";
-		std::string CarDir = "Cars/";
-		std::ofstream out("");
+		std::string bikeDir = BikeDir;
+		std::string carDir = CarDir;
+		//std::ofstream out("");
 		if (typeid(**it) == typeid(Bike)) {
-			std::ofstream out(BikeDir.append((**it).GetReg()).append(".txt"));
+			std::ofstream out(bikeDir.append((**it).GetReg()).append(".txt"));
 			out << (**it++);
 		}
 		if (typeid(**it) == typeid(Car)) {
-			std::ofstream out(CarDir.append((**it).GetReg()).append(".txt"));
+			std::ofstream out(carDir.append((**it).GetReg()).append(".txt"));
 			out << (**it++);
 		}
 	}
@@ -83,16 +83,15 @@ void Storage::AddVehicle(char model[31], char make[31], char reg[9], int age, in
 	}
 }
 
-void Storage::RemoveVehicle(char reg[9]) {
-	//COMPLETELY BROKEN!!!!!!!!!
-	int flag(0);
+void Storage::RemoveVehicle(const char reg[9]) {
+	//ALMOST FUNCTIONAL, NEED TO REMOVE FROM FILE....
 	std::list<Vehicle*>::iterator it(vehicles.begin());
-	while (it != vehicles.end() || flag != 1) {
-		std::cout << (**it).GetReg();
-		if ((**it).GetReg() == reg) {
-			flag = 1;
-			vehicles.remove((*it));
+	while (it != vehicles.end()) {
+		if (strcmp((**it).GetReg(), reg) == 0) {
+			std::remove((**it).ReturnFilePath().c_str());
 			delete(*it);
+			vehicles.remove((*it));
+			return;
 		}
 		it++;
 	}

@@ -27,4 +27,8 @@ void Vehicle::DisplayToMenu() {
 	std::cout << "   " << VehicleReg << "                   " << std::fixed << std::setprecision(2) << ReturnCost() << "                  " << GetType() << std::endl;
 }
 
+const std::string Vehicle::ReturnFilePath() {
+	return GetType().append("s/").append(VehicleReg).append(".txt");
+}
+
 

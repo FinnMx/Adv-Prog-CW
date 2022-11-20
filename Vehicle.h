@@ -18,9 +18,12 @@ public:
 	const char* GetReg();
 	const int GetAge();
 	friend std::ostream& operator<<(std::ostream& os, Vehicle& rhs);
+
 	void GetValues();
 	void DisplayToMenu();
 	virtual double ReturnCost() = 0;
+
+	const std::string ReturnFilePath();
 
 protected:
 	virtual std::string GetType() = 0;
