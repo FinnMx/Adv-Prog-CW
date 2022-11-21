@@ -14,3 +14,4 @@ Record::Record(int rentalNum, std::string dateFrom, std::string dateTo, int rent
 Record::~Record() {  
 
 }
+

@@ -38,7 +38,11 @@ const std::string Vehicle::ReturnFilePath() {
 void Vehicle::DisplaySpecifics() {
 	system("CLS");
 	std::cout << VehicleReg << ": " << VehicleMake << " " << VehicleModel << "\n--------------------" << std::endl;
-	std::cout << "Cost Per Day: " << std::fixed << std::setprecision(2) << ReturnCost() << "\nTotal Rented Income: " << "\nTotal Days Rented" << std::endl;
+	std::cout << "\nCost Per Day: " << std::fixed << std::setprecision(2) << ReturnCost() << "\nTotal Rented Income: " << "\nTotal Days Rented:" << std::endl;
+}
+
+void Vehicle::DisplayRecord(int record) {
+	std::cout << Records[record];
 }
 
 

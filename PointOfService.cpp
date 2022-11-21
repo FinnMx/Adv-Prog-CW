@@ -100,7 +100,27 @@ void PointOfService::BikeSearchMenu(Storage& storage) {
 
 void PointOfService::SearchCont(Storage& storage) {
 	DisplaySearchMenu(storage);
-	std::cout << "1) Rent Vehicle\n2) View historic rentals\n9) Return to main menu" << std::endl;
+	std::cout << "\n1) Rent Vehicle\n2) View historic rentals\n9) Return to main menu" << std::endl;
+	std::cin >> Input;
+	switch (Input) {
+	case 1:
+		break;
+	case 2:
+	    RecordsMenu(storage);
+	}
+}
+
+void PointOfService::RecordsMenu(Storage& storage) {
+	int index = 0;
+	while (Input != 9) {
+		storage.DisplayRecord(index);
+		std::cout << "\n1) View the previous record\n2) View the next record\n9) Return to vehicle information screen" << std::endl;
+		std::cin >> Input;
+		if (Input == 1)
+			index--;
+		else if (Input == 2)
+			index++;
+	}
 }
 
 void PointOfService::DisplaySearchMenu(Storage& storage) {

@@ -15,6 +15,7 @@ public:
 	void DisplayAllVehicles();
 	void DisplaySearchResults();
 	void DisplayVehicleInfo(int op);
+	void DisplayRecord(int record);
 
 	void ReadFromDisk(std::string dir);
 	void WriteToDisk();

@@ -15,6 +15,8 @@ public:
 	void DisplaySearchMenu(Storage& storage);
 	void SearchCont(Storage& storage);
 
+	void RecordsMenu(Storage& storage);
+
 	void DisplaySearchByReg();
 	void DisplaySearchBySeats();
 	void DisplaySearchByDoors();

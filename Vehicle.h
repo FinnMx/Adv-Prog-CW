@@ -22,6 +22,7 @@ public:
 	void DisplayToMenu();
 	void DisplayToSearchMenu();
 	void DisplaySpecifics();
+	void DisplayRecord(int record);
 
 	virtual double ReturnCost() = 0;
 	virtual int GetExtra1() = 0;
@@ -35,8 +36,8 @@ protected:
 
 private:
 	int RECORD_SIZE = 1;
-	Record* Records = new Record[RECORD_SIZE];
 
+	Record* Records = new Record[RECORD_SIZE];
 	int VehicleAge;
 	char VehicleModel[31], VehicleMake[31], VehicleReg[9];
 
