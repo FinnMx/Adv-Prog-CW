@@ -1,5 +1,6 @@
 #include "PointOfService.h"
 #include <iostream>
+#include <iomanip>
 
 PointOfService::PointOfService() : Input(0), Exit(false) {
 
@@ -7,6 +8,22 @@ PointOfService::PointOfService() : Input(0), Exit(false) {
 
 PointOfService::~PointOfService() {
 
+}
+
+int PointOfService::GetIntChoice() {
+	Input = 0;
+	std::cout << "\nPlease choose an option: ";
+	std::cin >> std::setw(1) >> Input;
+
+	while (!std::cin.good()) {
+		std::cout << "\nINVALID INPUT..." << std::endl;
+		std::cin.clear();
+		std::cin.ignore(INT_MAX, '\n');
+
+		std::cout << "\nPlease choose an option: ";
+		std::cin >> std::setw(1) >> Input;
+	}
+	return Input;
 }
 
 void PointOfService::DisplayMenu(Storage& storage) {
@@ -22,8 +39,7 @@ void PointOfService::DisplayMenu(Storage& storage) {
 void PointOfService::HandleUserInput(Storage& storage) {
 	storage.DisplayAllVehicles();
 	std::cout << "\n1)Add Vehicle\n2)Remove Vehicle\n3)Search for a Car\n4)Search for a bike\n5)Sort Vehicles by registration number\n6)Sort by cost per day\n9)Exit\n" << std::endl;
-	std::cin >> Input;
-	switch (Input)
+	switch (GetIntChoice())
 	{
 	case 1:
 		AddVehicle(storage);
@@ -54,8 +70,7 @@ void PointOfService::HandleUserInput(Storage& storage) {
 
 void PointOfService::CarSearchMenu(Storage& storage) {
 	std::cout << "Search for a car by:\n--------------------\n1) Registration number\n2) Number of seats\n3) Number of doors\n9) Return to main menu" << std::endl;
-	std::cin >> Input;
-	switch (Input) {
+	switch (GetIntChoice()) {
 	case 1:
 		DisplaySearchByReg();
 		storage.SearchByReg(Reg);
@@ -77,8 +92,7 @@ void PointOfService::CarSearchMenu(Storage& storage) {
 
 void PointOfService::BikeSearchMenu(Storage& storage) {
 	std::cout << "Search for a Bike by:\n--------------------\n1) Registration number\n2) Engine Size\n3) Number of wheels\n9) Return to main menu" << std::endl;
-	std::cin >> Input;
-	switch (Input) {
+	switch (GetIntChoice()) {
 	case 1:
 		DisplaySearchByReg();
 		storage.SearchByReg(Reg);
@@ -101,12 +115,13 @@ void PointOfService::BikeSearchMenu(Storage& storage) {
 void PointOfService::SearchCont(Storage& storage) {
 	DisplaySearchMenu(storage);
 	std::cout << "\n1) Rent Vehicle\n2) View historic rentals\n9) Return to main menu" << std::endl;
-	std::cin >> Input;
-	switch (Input) {
+	switch (GetIntChoice()) {
 	case 1:
 		break;
 	case 2:
 	    RecordsMenu(storage);
+	default:
+		return;
 	}
 }
 

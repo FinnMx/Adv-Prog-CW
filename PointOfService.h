@@ -28,6 +28,10 @@ public:
 	void HandleVehicleInput();
 	void RemoveVehicle(Storage& storage);
 
+
+	//	ERROR HANDLING
+	int GetIntChoice();
+
 private:
 	int Input;
 	bool Exit;
