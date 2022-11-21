@@ -35,7 +35,7 @@ void PointOfService::HandleUserInput(Storage& storage) {
 		CarSearchMenu(storage);
 		break;
 	case 4:
-
+		BikeSearchMenu(storage);
 		break;
 	case 5:
 		storage.SortByReg();
@@ -72,7 +72,35 @@ void PointOfService::CarSearchMenu(Storage& storage) {
 		return;
 		break;
 	}
+	SearchCont(storage);
+}
+
+void PointOfService::BikeSearchMenu(Storage& storage) {
+	std::cout << "Search for a Bike by:\n--------------------\n1) Registration number\n2) Engine Size\n3) Number of wheels\n9) Return to main menu" << std::endl;
+	std::cin >> Input;
+	switch (Input) {
+	case 1:
+		DisplaySearchByReg();
+		storage.SearchByReg(Reg);
+		break;
+	case 2:
+		DisplaySearchByEngine();
+		storage.SearchByEngine(Extra1);
+		break;
+	case 3:
+		DisplaySearchByWheels();
+		storage.SearchByWheels(Extra2);
+		break;
+	default:
+		return;
+		break;
+	}
+	SearchCont(storage);
+}
+
+void PointOfService::SearchCont(Storage& storage) {
 	DisplaySearchMenu(storage);
+	std::cout << "1) Rent Vehicle\n2) View historic rentals\n9) Return to main menu" << std::endl;
 }
 
 void PointOfService::DisplaySearchMenu(Storage& storage) {
@@ -98,6 +126,16 @@ void PointOfService::DisplaySearchBySeats() {
 void PointOfService::DisplaySearchByDoors() {
 	std::cout << "Please enter the number of doors in the vehicle:" << std::endl;
 	std::cin >> Extra1;
+}
+
+void PointOfService::DisplaySearchByEngine() {
+	std::cout << "Please enter the engine size of the bike:" << std::endl;
+	std::cin >> Extra1;
+}
+
+void PointOfService::DisplaySearchByWheels() {
+	std::cout << "Please enter the number of wheels on the bike:" << std::endl;
+	std::cin >> Extra2;
 }
 
 void PointOfService::HandleVehicleInput() {

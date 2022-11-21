@@ -28,6 +28,8 @@ public:
 	void SearchByReg(char reg[9]);
 	void SearchBySeats(int seats);
 	void SearchByDoors(int doors);
+	void SearchByEngine(int engsize);
+	void SearchByWheels(int wheels);
 
 private:
 	const std::string BikeDir = "Bikes/";
@@ -35,6 +37,7 @@ private:
 
 	std::list<Vehicle*> vehicles;
 	std::vector<Vehicle*> ReturnedFromSearch;
+	Vehicle* v;
 
 	int index = 0;
 

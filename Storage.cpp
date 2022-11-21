@@ -8,7 +8,7 @@
 #include <list>
 #include <vector>
 
-Storage::Storage() {
+Storage::Storage() : v(v){
 	Storage::ReadFromDisk("Bikes");
 	Storage::ReadFromDisk("Cars");
 }
@@ -125,6 +125,26 @@ void Storage::SearchByDoors(int doors) {
 	}
 }
 
+void Storage::SearchByEngine(int engsize) {
+	std::list<Vehicle*>::iterator it(vehicles.begin());
+	while (it != vehicles.end()) {
+		if (typeid(**it) == typeid(Bike) && (**it).GetExtra1() == engsize) {
+			ReturnedFromSearch.push_back(*it);
+		}
+		it++;
+	}
+}
+
+void Storage::SearchByWheels(int wheels) {
+	std::list<Vehicle*>::iterator it(vehicles.begin());
+	while (it != vehicles.end()) {
+		if (typeid(**it) == typeid(Bike) && (**it).GetExtra2() == wheels) {
+			ReturnedFromSearch.push_back(*it);
+		}
+		it++;
+	}
+}
+
 void Storage::DisplaySearchResults() {
 	for(Vehicle* var : ReturnedFromSearch)
 	{
@@ -136,4 +156,6 @@ void Storage::DisplaySearchResults() {
 
 void Storage::DisplayVehicleInfo(int op) {
 	ReturnedFromSearch[op-1]->DisplaySpecifics();
+	v = ReturnedFromSearch[op - 1];
+	ReturnedFromSearch.clear();
 }
