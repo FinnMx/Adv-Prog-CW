@@ -31,12 +31,14 @@ public:
 	void ReturnAllRecords();
 	const std::string ReturnFilePath();
 	void ResizeRecords();
+	void InsertRecord(Record r);
 
 protected:
 	virtual std::string GetType() = 0;
 
 private:
 	size_t RECORD_SIZE = 1;  
+	size_t CURRENT_RECORDS = 0;
 	Record* Records = new Record[RECORD_SIZE];
 
 	int VehicleAge;

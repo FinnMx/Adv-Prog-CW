@@ -60,8 +60,25 @@ void Vehicle::ResizeRecords() {
 void Vehicle::ReturnAllRecords() {
 	std::string dir = "Records/";
 	std::ifstream file(dir.append(VehicleReg).append(".txt"));
-	int linecount  = (std::count(std::istreambuf_iterator<char>(file), std::istreambuf_iterator<char>(), '\n')) + 1;
-	for (int i = 1; i <= (linecount / 8); i++) {
-
+	int i = 0;
+	std::string line[9];
+	//refactor to a for loop, cut out bare lines
+	while (std::getline(file, line[i])) {
+		if (line[i] == "/") {
+			Record r(std::stoi(line[i - 8]), line[i - 7], line[i - 6], std::stoi(line[i - 5]), std::stod(line[i - 4]), line[i - 3], line[i - 2], std::stoi(line[i - 1]));
+			InsertRecord(r);
+			i = 0;
+		}
+		else
+			i++;
 	}
+}
+
+void Vehicle::InsertRecord(Record r) {
+	if (CURRENT_RECORDS >= RECORD_SIZE) {
+		ResizeRecords();
+		InsertRecord(r);
+	}
+	else
+		Records[CURRENT_RECORDS++] = r;
 }

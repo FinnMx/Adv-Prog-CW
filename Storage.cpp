@@ -155,10 +155,10 @@ void Storage::DisplaySearchResults() {
 }
 
 void Storage::DisplayVehicleInfo(int op) {
-	ReturnedFromSearch[op-1]->DisplaySpecifics();
 	v = ReturnedFromSearch[op - 1];
-	ReturnedFromSearch.clear();
 	v->ReturnAllRecords();
+	ReturnedFromSearch[op-1]->DisplaySpecifics();
+	ReturnedFromSearch.clear();
 }
 
 void Storage::DisplayRecord(int record) {
