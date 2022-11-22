@@ -27,17 +27,18 @@ public:
 	virtual double ReturnCost() = 0;
 	virtual int GetExtra1() = 0;
 	virtual int GetExtra2() = 0;
+	
+	void ReturnAllRecords();
 	const std::string ReturnFilePath();
-
-
+	void ResizeRecords();
 
 protected:
 	virtual std::string GetType() = 0;
 
 private:
-	int RECORD_SIZE = 1;
-
+	size_t RECORD_SIZE = 1;  
 	Record* Records = new Record[RECORD_SIZE];
+
 	int VehicleAge;
 	char VehicleModel[31], VehicleMake[31], VehicleReg[9];
 

@@ -1,6 +1,7 @@
 #include "Record.h"
 
-Record::Record() {
+Record::Record() : RentalNum(1), DateFrom("22/11/2022"), DateTo("22/11/2022"), RentalDays(1), TotalCost(3),
+	CustomberName("jeff"), CustomerAddress("t"), CustomerNumber(22) {
 
 }
 
