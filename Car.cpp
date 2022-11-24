@@ -7,11 +7,9 @@ Car::~Car() {
 
 }
 
-void Car::GetExtraData() {
-	std::cout << "Please enter the number of doors" << std::endl;
-	std::cin >> DoorNum;
-	std::cout << "Please enter the number of seats" << std::endl;
-	std::cin >> SeatNum;
+void Car::WriteSelfToDisk() {
+	std::ofstream out(ReturnFilePath());
+	out << *this;
 }
 
 double Car::ReturnCost() {

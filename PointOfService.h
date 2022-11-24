@@ -7,7 +7,7 @@ public:
 	~PointOfService();
 
 	void DisplayMenu(Storage &storage);
-	void HandleUserInput(Storage &storage);
+	bool HandleUserInput(Storage &storage);
 
 	void CarSearchMenu(Storage& storage);
 	void BikeSearchMenu(Storage& storage);
@@ -34,7 +34,6 @@ public:
 
 private:
 	int Input;
-	bool Exit;
 
 	//vars for input of vehicle creation... create locally within functions
 	int Extra1, Extra2, Age;

@@ -11,14 +11,13 @@ public:
 	//constructor stuff
 	Vehicle(char* Model, char* Make, char* Reg, int Age);
 	~Vehicle();
-	void SetValues(char* Model, char* Make, char* Reg, int Age);
 
 	//comparison functions
 	int CompareReg(const char* reg);
 	const char RegLetter();
 
 	//op overloads
-	friend std::ostream& operator<<(std::ostream& os, Vehicle& rhs);
+	std::string ReturnDataForSave();
 
 	//display function
 	void DisplayToMenu();
@@ -27,8 +26,7 @@ public:
 	void DisplayRecord(int record);
 
 	virtual double ReturnCost() = 0;
-	virtual int GetExtra1() = 0;
-	virtual int GetExtra2() = 0;
+	virtual void WriteSelfToDisk() = 0;
 	
 	//record stuff
 	void ReturnAllRecords();
@@ -38,11 +36,12 @@ public:
 	void SaveRecords();
 
 protected:
-	virtual std::string GetType() = 0;
+	virtual std::string GetType() = 0; //can use typeid
 	const int GetAge();
 
+
 private:
-	//record array
+	//record array ((might not be the best way to do this!)
 	size_t RECORD_SIZE = 1;
 	size_t CURRENT_RECORDS = 0;
 	Record* Records = new Record[RECORD_SIZE];

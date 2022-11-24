@@ -26,6 +26,7 @@ void Storage::DisplayAllVehicles() {
 	index = 0;
 }
 
+//Cars and bikes should know where to read themselves
 void Storage::ReadFromDisk(std::string dir) {
 	//this shits aids fix up
 	//routine to get a list of each doccument in the vehicle list folder using c++ 17 filesystem lib...
@@ -50,11 +51,11 @@ void Storage::ReadFromDisk(std::string dir) {
 	}
 }
 
+//Cars and Bike should know where to save themselves
 void Storage::WriteToDisk() {
 	std::list<Vehicle*>::iterator it(vehicles.begin());
 	while (it != vehicles.end()) {
-		std::ofstream out((**it).ReturnFilePath());
-		out << (**it++);
+		(**it++).WriteSelfToDisk();
 	}
 }
 
@@ -109,7 +110,7 @@ void Storage::SearchByReg(char reg[9]) {
 void Storage::SearchBySeats(int seats) {
 	std::list<Vehicle*>::iterator it(vehicles.begin());
 	while (it != vehicles.end()) {
-		if (typeid(**it) == typeid(Car) && (**it).GetExtra2() == seats) {
+		if (typeid(**it) == typeid(Car) && dynamic_cast<Car*>(*it)->CompareSeats(seats)) {
 			ReturnedFromSearch.push_back(*it);
 		}
 		it++;
@@ -119,7 +120,7 @@ void Storage::SearchBySeats(int seats) {
 void Storage::SearchByDoors(int doors) {
 	std::list<Vehicle*>::iterator it(vehicles.begin());
 	while (it != vehicles.end()) {
-		if (typeid(**it) == typeid(Car) && (**it).GetExtra1() == doors) {
+		if (typeid(**it) == typeid(Car) && dynamic_cast<Car*>(*it)->CompareDoors(doors)) {
 			ReturnedFromSearch.push_back(*it);
 		}
 		it++;
@@ -129,7 +130,7 @@ void Storage::SearchByDoors(int doors) {
 void Storage::SearchByEngine(int engsize) {
 	std::list<Vehicle*>::iterator it(vehicles.begin());
 	while (it != vehicles.end()) {
-		if (typeid(**it) == typeid(Bike) && (**it).GetExtra1() == engsize) {
+		if (typeid(**it) == typeid(Bike) && dynamic_cast<Bike*>(*it)->CompareWheels(engsize)) {
 			ReturnedFromSearch.push_back(*it);
 		}
 		it++;
@@ -139,7 +140,7 @@ void Storage::SearchByEngine(int engsize) {
 void Storage::SearchByWheels(int wheels) {
 	std::list<Vehicle*>::iterator it(vehicles.begin());
 	while (it != vehicles.end()) {
-		if (typeid(**it) == typeid(Bike) && (**it).GetExtra2() == wheels) {
+		if (typeid(**it) == typeid(Bike) && dynamic_cast<Bike*>(*it)->CompareWheels(wheels)) {
 			ReturnedFromSearch.push_back(*it);
 		}
 		it++;

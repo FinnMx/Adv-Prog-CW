@@ -2,7 +2,7 @@
 #include <iostream>
 #include <iomanip>
 
-PointOfService::PointOfService() : Input(0), Exit(false) {
+PointOfService::PointOfService() : Input(0) {
 
 }
 
@@ -27,18 +27,18 @@ int PointOfService::GetIntChoice() {
 }
 
 void PointOfService::DisplayMenu(Storage& storage) {
-	while (Exit == false) {
+	do{
 		system("CLS");
 		std::cout << "Vehicle Rental System\n---------------------\n" << std::endl;
 		std::cout << "Registration Number          Cost Per Day          Vehicle Type" << std::endl;
 		std::cout << "-------------------          ------------          ------------" << std::endl;
 		storage.DisplayAllVehicles();
-		HandleUserInput(storage);
-	}
+
+	} while (HandleUserInput(storage));
 }
 
 //make return a value 
-void PointOfService::HandleUserInput(Storage& storage) {
+bool PointOfService::HandleUserInput(Storage& storage) {
 	std::cout << "\n1)Add Vehicle\n2)Remove Vehicle\n3)Search for a Car\n4)Search for a bike\n5)Sort Vehicles by registration number\n6)Sort by cost per day\n9)Exit\n" << std::endl;
 	switch (GetIntChoice())
 	{
@@ -62,7 +62,7 @@ void PointOfService::HandleUserInput(Storage& storage) {
 		break;
 	case 9:
 		storage.WriteToDisk();
-		Exit = true;
+		return false;
 		break;
 	default:
 		std::cout << "\nplease choose a given option..." << std::endl;

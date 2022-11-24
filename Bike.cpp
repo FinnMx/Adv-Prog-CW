@@ -8,11 +8,9 @@ Bike::~Bike() {
 
 }
 
-void Bike::GetExtraData() {
-	std::cout << "Please enter the engine size" << std::endl;	
-	std::cin >> EngSize;
-	std::cout << "Please enter the number of wheels" << std::endl;
-	std::cin >> WheelNum;
+void Bike::WriteSelfToDisk() {
+	std::ofstream out(ReturnFilePath());
+	out << this;
 }
 
 double Bike::ReturnCost() {

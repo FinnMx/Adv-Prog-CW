@@ -17,9 +17,13 @@ Vehicle::Vehicle(char* Model, char* Make, char* Reg, int Age) {
 	this->Records = Records;
 }
 
-std::ostream& operator<<(std::ostream& os, Vehicle& rhs) {
-	return os << rhs.VehicleReg << "\n" << rhs.VehicleMake << "\n" << rhs.VehicleModel << "\n" << rhs.VehicleAge << "\n" << rhs.GetExtra1() << "\n" << rhs.GetExtra2();
+std::string Vehicle::ReturnDataForSave() {
+	std::string tmp;
+	auto s = std::to_string(VehicleAge);
+	tmp = tmp.append(VehicleReg).append("\n").append(VehicleMake).append("\n").append(VehicleModel).append("\n").append(s);
+	return tmp;
 }
+
 
 void Vehicle::DisplayToMenu() {
 	std::cout << "   " << VehicleReg << "                   " << std::fixed << std::setprecision(2) << ReturnCost() << "                  " << GetType() << std::endl;
