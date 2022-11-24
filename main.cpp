@@ -9,10 +9,10 @@
 namespace fs = std::experimental::filesystem;
 
 int main() {
+
 	Storage storage = Storage();
 	PointOfService pos = PointOfService();
 	pos.DisplayMenu(storage);
-
 	
 	return 0;
 }

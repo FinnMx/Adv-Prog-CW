@@ -23,7 +23,6 @@ public:
 	void DisplaySearchByEngine();
 	void DisplaySearchByWheels();
 
-
 	void AddVehicle(Storage& storage);
 	void HandleVehicleInput();
 	void RemoveVehicle(Storage& storage);

@@ -1,2 +1,6 @@
-﻿  Storage.cpp
+﻿  PointOfService.cpp
+  Vehicle.cpp
+C:\Users\New Owner\Desktop\CORRECTAdv Programming coursework\Adv-Prog-CW\Vehicle.cpp(92,20): warning C4018: '<': signed/unsigned mismatch
+  main.cpp
+  Generating Code...
   Adv Programming coursework.vcxproj -> C:\Users\New Owner\Desktop\CORRECTAdv Programming coursework\Adv-Prog-CW\Debug\Adv Programming coursework.exe

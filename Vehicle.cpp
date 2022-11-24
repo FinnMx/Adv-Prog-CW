@@ -89,7 +89,7 @@ int Vehicle::CompareReg(const char* reg) {
 void Vehicle::SaveRecords() {
 	std::string dir = "Records/";
 	std::ofstream file(dir.append(VehicleReg).append(".txt"));
-	for (int i = 0; i <= sizeof(Records); i++) {
+	for (int i = 0; i < RECORD_SIZE; i++) {
 		file << Records[i];
 	}
 }

@@ -121,9 +121,9 @@ void PointOfService::SearchCont(Storage& storage) {
 	case 2:
 	    RecordsMenu(storage);
 	default:
-		return;
+		storage.SaveRecords();
+		break;
 	}
-	storage.SaveRecords();
 }
 
 void PointOfService::RecordsMenu(Storage& storage) {
