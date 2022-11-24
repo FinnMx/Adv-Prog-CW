@@ -9,11 +9,7 @@ Vehicle::~Vehicle() {
 
 }
 
-void Vehicle::GetValues() {
-
-}
-
-void Vehicle::SetValues(char* Model, char* Make, char* Reg, int Age) {
+Vehicle::Vehicle(char* Model, char* Make, char* Reg, int Age) {
 	strcpy_s(VehicleModel, Model);
 	strcpy_s(VehicleMake, Make);
 	strcpy_s(VehicleReg, Reg);
@@ -44,12 +40,11 @@ void Vehicle::DisplaySpecifics() {
 }
 
 void Vehicle::DisplayRecord(int record) {
-	std::cout << Records[record];
+	Records[record].DisplayToMenu();
 }
 
-//resize array routine, cited from cplusplus forums and also lectures. 
 void Vehicle::ResizeRecords() {
-	size_t NEW_SIZE = RECORD_SIZE * 2;
+	size_t NEW_SIZE = ++RECORD_SIZE;
 	Record* ResizedRecords = new Record[NEW_SIZE];
 	memcpy(ResizedRecords, Records, RECORD_SIZE * sizeof(Record));
 	RECORD_SIZE = NEW_SIZE;
@@ -81,4 +76,20 @@ void Vehicle::InsertRecord(Record r) {
 	}
 	else
 		Records[CURRENT_RECORDS++] = r;
+}
+
+const char Vehicle::RegLetter() {
+	return VehicleReg[0];
+}
+
+int Vehicle::CompareReg(const char* reg) {
+	return strcmp(VehicleReg, reg);
+}
+
+void Vehicle::SaveRecords() {
+	std::string dir = "Records/";
+	std::ofstream file(dir.append(VehicleReg).append(".txt"));
+	for (int i = 0; i <= sizeof(Records); i++) {
+		file << Records[i];
+	}
 }

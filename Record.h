@@ -9,6 +9,7 @@ public:
 	~Record();
 
 	friend std::ostream& operator<<(std::ostream& os, const Record& rhs);
+	void DisplayToMenu();
 	
 
 protected:
@@ -20,5 +21,5 @@ private:
 };
 
 inline std::ostream& operator<<(std::ostream& os, const Record& rhs) {
-	return os << "\nRental:     " << rhs.RentalNum << "\nDate From:     " << rhs.DateFrom << "\nDate To :     " << rhs.DateTo << "\nRental Days :     " << rhs.RentalDays << "\nTotal Cost :     " << rhs.TotalCost << "\nCustomer Name :     " << rhs.CustomberName << "\nCustomer Address :     " << rhs.CustomerAddress << "\nCustomer Number :     " << rhs.CustomerNumber << std::endl;
+	return os << rhs.RentalNum << "\n" << rhs.DateFrom << "\n" << rhs.DateTo << "\n" << rhs.RentalDays << "\n" << rhs.TotalCost << "\n" << rhs.CustomberName << "\n" << rhs.CustomerAddress << "\n" << rhs.CustomerNumber << "\n/\n";
 }

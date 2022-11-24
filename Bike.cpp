@@ -1,7 +1,7 @@
 #include "Bike.h"
 
-Bike::Bike(char* Reg, char* Make, char* Model, int Age, int Eng, int Wheels) : EngSize(Eng), WheelNum(Wheels) {
-	SetValues(Model, Make, Reg, Age);
+Bike::Bike(char* Reg, char* Make, char* Model, int Age, int Eng, int Wheels) : EngSize(Eng), WheelNum(Wheels), Vehicle(Model, Make, Reg, Age) {
+
 }
 
 Bike::~Bike() {

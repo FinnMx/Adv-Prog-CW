@@ -27,6 +27,7 @@ void Storage::DisplayAllVehicles() {
 }
 
 void Storage::ReadFromDisk(std::string dir) {
+	//this shits aids fix up
 	//routine to get a list of each doccument in the vehicle list folder using c++ 17 filesystem lib...
 	std::string tmp;
 	char tmpval[6][31];
@@ -77,7 +78,7 @@ void Storage::AddVehicle(char model[31], char make[31], char reg[9], int age, in
 void Storage::RemoveVehicle(const char reg[9]) {
 	std::list<Vehicle*>::iterator it(vehicles.begin());
 	while (it != vehicles.end()) {
-		if (strcmp((**it).GetReg(), reg) == 0) {
+		if ((**it).CompareReg(reg) == 0) {
 			std::remove((**it).ReturnFilePath().c_str());
 			delete(*it);
 			vehicles.remove((*it));
@@ -92,13 +93,13 @@ void Storage::SortByCost() {
 }
 
 void Storage::SortByReg() {
-	vehicles.sort(CompareReg());
+	vehicles.sort();
 }
 
 void Storage::SearchByReg(char reg[9]) {
 	std::list<Vehicle*>::iterator it(vehicles.begin());
 	while (it != vehicles.end()) {
-		if (strcmp((**it).GetReg(), reg) == 0) {
+		if ((**it).CompareReg(reg) == 0) {
 			ReturnedFromSearch.push_back(*it);
 		}
 		it++;
@@ -157,8 +158,13 @@ void Storage::DisplaySearchResults() {
 void Storage::DisplayVehicleInfo(int op) {
 	v = ReturnedFromSearch[op - 1];
 	v->ReturnAllRecords();
+
 	ReturnedFromSearch[op-1]->DisplaySpecifics();
 	ReturnedFromSearch.clear();
+}
+
+void Storage::SaveRecords(){
+	v->SaveRecords();
 }
 
 void Storage::DisplayRecord(int record) {

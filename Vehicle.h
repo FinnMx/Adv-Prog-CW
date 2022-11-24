@@ -8,17 +8,20 @@
 class Vehicle
 {
 public:
+	//constructor stuff
+	Vehicle(char* Model, char* Make, char* Reg, int Age);
 	~Vehicle();
 	void SetValues(char* Model, char* Make, char* Reg, int Age);
 
-	const char* GetModel();
-	const char* GetMake();
-	const char* GetReg();
+	//comparison functions
+	int CompareReg(const char* reg);
 	const int GetAge();
+	const char RegLetter();
+
+	//op overloads
 	friend std::ostream& operator<<(std::ostream& os, Vehicle& rhs);
 
-	void GetValues();
-
+	//display function
 	void DisplayToMenu();
 	void DisplayToSearchMenu();
 	void DisplaySpecifics();
@@ -28,16 +31,19 @@ public:
 	virtual int GetExtra1() = 0;
 	virtual int GetExtra2() = 0;
 	
+	//record stuff
 	void ReturnAllRecords();
 	const std::string ReturnFilePath();
 	void ResizeRecords();
 	void InsertRecord(Record r);
+	void SaveRecords();
 
 protected:
 	virtual std::string GetType() = 0;
 
 private:
-	size_t RECORD_SIZE = 1;  
+	//record array
+	size_t RECORD_SIZE = 1;
 	size_t CURRENT_RECORDS = 0;
 	Record* Records = new Record[RECORD_SIZE];
 
@@ -51,23 +57,12 @@ struct CompareCost {
 		return lhs->ReturnCost() < rhs->ReturnCost();
 	}
 };
+
 struct CompareReg {
 	bool operator()(Vehicle* lhs, Vehicle* rhs) {
-		return (lhs->GetReg())[0] < (rhs->GetReg())[0];
+		return (lhs->RegLetter() < rhs->RegLetter());
 	}
 };
-
-inline const char* Vehicle::GetModel() {
-	return VehicleModel;
-}
-
-inline const char* Vehicle::GetMake() {
-	return VehicleMake;
-}
-
-inline const char* Vehicle::GetReg() {
-	return VehicleReg;
-}
 
 inline const int Vehicle::GetAge() {
 	return VehicleAge;

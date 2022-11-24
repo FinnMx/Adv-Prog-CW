@@ -19,6 +19,7 @@ public:
 
 	void ReadFromDisk(std::string dir);
 	void WriteToDisk();
+	void SaveRecords();
 
 	void AddVehicle(char model[31], char make[31], char reg[9], int age, int extra1, int extra2, int op);
 	void RemoveVehicle(const char reg[9]);

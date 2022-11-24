@@ -123,6 +123,7 @@ void PointOfService::SearchCont(Storage& storage) {
 	default:
 		return;
 	}
+	storage.SaveRecords();
 }
 
 void PointOfService::RecordsMenu(Storage& storage) {

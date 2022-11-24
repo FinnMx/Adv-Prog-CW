@@ -12,6 +12,10 @@ Record::Record(int rentalNum, std::string dateFrom, std::string dateTo, int rent
 
 }
 
+void Record::DisplayToMenu() {
+	std::cout << "\nRental:     " << RentalNum << "\nDate From:     " << DateFrom << "\nDate To :     " << DateTo << "\nRental Days :     " << RentalDays << "\nTotal Cost :     " << TotalCost << "\nCustomer Name :     " << CustomberName << "\nCustomer Address :     " << CustomerAddress << "\nCustomer Number :     " << CustomerNumber << std::endl;
+}
+
 Record::~Record() {  
 
 }
