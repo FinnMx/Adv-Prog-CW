@@ -15,7 +15,6 @@ public:
 
 	//comparison functions
 	int CompareReg(const char* reg);
-	const int GetAge();
 	const char RegLetter();
 
 	//op overloads
@@ -40,6 +39,7 @@ public:
 
 protected:
 	virtual std::string GetType() = 0;
+	const int GetAge();
 
 private:
 	//record array
@@ -48,6 +48,7 @@ private:
 	Record* Records = new Record[RECORD_SIZE];
 
 	int VehicleAge;
+	//change so it can be dynamic
 	char VehicleModel[31], VehicleMake[31], VehicleReg[9];
 
 };

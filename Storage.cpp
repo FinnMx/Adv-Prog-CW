@@ -93,7 +93,7 @@ void Storage::SortByCost() {
 }
 
 void Storage::SortByReg() {
-	vehicles.sort();
+	vehicles.sort(CompareReg());
 }
 
 void Storage::SearchByReg(char reg[9]) {

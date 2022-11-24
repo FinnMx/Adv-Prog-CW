@@ -32,12 +32,13 @@ void PointOfService::DisplayMenu(Storage& storage) {
 		std::cout << "Vehicle Rental System\n---------------------\n" << std::endl;
 		std::cout << "Registration Number          Cost Per Day          Vehicle Type" << std::endl;
 		std::cout << "-------------------          ------------          ------------" << std::endl;
+		storage.DisplayAllVehicles();
 		HandleUserInput(storage);
 	}
 }
 
+//make return a value 
 void PointOfService::HandleUserInput(Storage& storage) {
-	storage.DisplayAllVehicles();
 	std::cout << "\n1)Add Vehicle\n2)Remove Vehicle\n3)Search for a Car\n4)Search for a bike\n5)Sort Vehicles by registration number\n6)Sort by cost per day\n9)Exit\n" << std::endl;
 	switch (GetIntChoice())
 	{
@@ -117,13 +118,22 @@ void PointOfService::SearchCont(Storage& storage) {
 	std::cout << "\n1) Rent Vehicle\n2) View historic rentals\n9) Return to main menu" << std::endl;
 	switch (GetIntChoice()) {
 	case 1:
-		break;
+		RentVehicle(storage);
 	case 2:
 	    RecordsMenu(storage);
 	default:
 		storage.SaveRecords();
 		break;
 	}
+}
+
+void PointOfService::RentVehicle(Storage& storage) {
+	std::string name;
+	std::cout << "\nHow many days do you want to rent the vehicle for: " << std::endl;
+	int days = GetIntChoice();
+	std::cout << "\nPlease enter your full name : " << std::endl;
+	std::cin >> name;
+	std::cout << "Please enter your : " << std::endl;
 }
 
 void PointOfService::RecordsMenu(Storage& storage) {

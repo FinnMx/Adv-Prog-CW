@@ -15,6 +15,7 @@ public:
 	void DisplaySearchMenu(Storage& storage);
 	void SearchCont(Storage& storage);
 
+	void RentVehicle(Storage& storage);
 	void RecordsMenu(Storage& storage);
 
 	void DisplaySearchByReg();
@@ -35,7 +36,7 @@ private:
 	int Input;
 	bool Exit;
 
-	//vars for input of vehicle creation...
+	//vars for input of vehicle creation... create locally within functions
 	int Extra1, Extra2, Age;
 	char Model[31], Make[31], Reg[9];
 };
