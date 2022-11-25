@@ -168,7 +168,7 @@ void Storage::SaveRecords(){
 	v->SaveRecords();
 }
 
-void Storage::DisplayRecord(int record) {
+void Storage::DisplayRecord(int& record) {
 	v->DisplaySpecifics();
 	v->DisplayRecord(record);
 }

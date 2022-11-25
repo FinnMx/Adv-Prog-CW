@@ -3,7 +3,7 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
-
+#include <assert.h>
 
 Vehicle::~Vehicle() {
 
@@ -15,6 +15,8 @@ Vehicle::Vehicle(char* Model, char* Make, char* Reg, int Age) {
 	strcpy_s(VehicleReg, Reg);
 	VehicleAge = Age;
 	this->Records = Records;
+	RECORD_SIZE = 0;
+	CURRENT_RECORDS = 0;
 }
 
 std::string Vehicle::ReturnDataForSave() {
@@ -40,15 +42,36 @@ const std::string Vehicle::ReturnFilePath() {
 void Vehicle::DisplaySpecifics() {
 	system("CLS");
 	std::cout << VehicleReg << ": " << VehicleMake << " " << VehicleModel << "\n--------------------" << std::endl;
-	std::cout << "\nCost Per Day: " << std::fixed << std::setprecision(2) << ReturnCost() << "\nTotal Rented Income: " << "\nTotal Days Rented:" << std::endl;
+	if (RECORD_SIZE != 0)
+		std::cout << "\nCost Per Day: " << std::fixed << std::setprecision(2) << ReturnCost() << "\nTotal Rented Income: " << std::fixed << std::setprecision(2) << ReturnTotalRentedIncome() << "\nTotal Days Rented:" << std::endl;
+	else
+		std::cout << "\nNo records exist for the vehicle..." << std::endl;
 }
 
-void Vehicle::DisplayRecord(int record) {
-	Records[record].DisplayToMenu();
+const double Vehicle::ReturnTotalRentedIncome() {
+	double total = 0;
+	for (int i = 0; i < RECORD_SIZE; i++) {
+		total += Records[i].ReturnCost();
+	}
+	return total;
+}
+
+//method may seem long but the if blocks stop the user from going over/out of bounds of the record list and makes the system work nicely
+void Vehicle::DisplayRecord(int& record) {
+	if (record >= RECORD_SIZE && record > 0) {
+		Records[RECORD_SIZE - 1].DisplayToMenu();
+		record = RECORD_SIZE - 1;
+	}
+	else if(record < 0){
+		Records[0].DisplayToMenu();
+		record = 0;
+	}
+	else
+		Records[record].DisplayToMenu();
 }
 
 void Vehicle::ResizeRecords() {
-	size_t NEW_SIZE = ++RECORD_SIZE;
+	size_t NEW_SIZE = RECORD_SIZE + 1;
 	Record* ResizedRecords = new Record[NEW_SIZE];
 	memcpy(ResizedRecords, Records, RECORD_SIZE * sizeof(Record));
 	RECORD_SIZE = NEW_SIZE;
@@ -95,5 +118,6 @@ void Vehicle::SaveRecords() {
 	std::ofstream file(dir.append(VehicleReg).append(".txt"));
 	for (int i = 0; i < RECORD_SIZE; i++) {
 		file << Records[i];
+		file << "\n/\n";
 	}
 }

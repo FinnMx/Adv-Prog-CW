@@ -23,7 +23,7 @@ public:
 	void DisplayToMenu();
 	void DisplayToSearchMenu();
 	void DisplaySpecifics();
-	void DisplayRecord(int record);
+	void DisplayRecord(int& record);
 
 	virtual double ReturnCost() = 0;
 	virtual void WriteSelfToDisk() = 0;
@@ -41,9 +41,12 @@ protected:
 
 
 private:
-	//record array ((might not be the best way to do this!)
-	size_t RECORD_SIZE = 1;
-	size_t CURRENT_RECORDS = 0;
+	//private methods...
+	const double ReturnTotalRentedIncome();
+
+	//record array (might not be the best way to do this!)
+	size_t RECORD_SIZE;
+	size_t CURRENT_RECORDS;
 	Record* Records = new Record[RECORD_SIZE];
 
 	int VehicleAge;

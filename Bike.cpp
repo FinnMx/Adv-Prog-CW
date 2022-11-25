@@ -10,7 +10,7 @@ Bike::~Bike() {
 
 void Bike::WriteSelfToDisk() {
 	std::ofstream out(ReturnFilePath());
-	out << this;
+	out << *this;
 }
 
 double Bike::ReturnCost() {

@@ -10,6 +10,8 @@ public:
 
 	friend std::ostream& operator<<(std::ostream& os, const Record& rhs);
 	void DisplayToMenu();
+
+	const double ReturnCost();
 	
 
 protected:

@@ -1,2 +1,3 @@
 ﻿  PointOfService.cpp
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\PointOfService.cpp(88): warning C4715: 'PointOfService::HandleUserInput': not all control paths return a value
   Adv Programming coursework.vcxproj -> C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\x64\Debug\Adv Programming coursework.exe

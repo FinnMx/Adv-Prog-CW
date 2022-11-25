@@ -12,6 +12,8 @@ PointOfService::~PointOfService() {
 
 int PointOfService::GetIntChoice() {
 	Input = 0;
+
+	//std::cin.ignore();
 	std::cout << "\nPlease choose an option: ";
 	std::cin >> std::setw(1) >> Input;
 
@@ -25,6 +27,22 @@ int PointOfService::GetIntChoice() {
 	}
 	return Input;
 }
+
+std::string PointOfService::GetStringChoice() {
+	std::string Input;
+
+	std::cin.ignore();
+	std::getline(std::cin, Input);
+	while (!std::cin.good()) {
+		std::cout << "\nINVALID INPUT..." << std::endl;
+
+		std::cin.ignore();
+		std::getline(std::cin, Input);
+	}
+	return Input;
+}
+
+
 
 void PointOfService::DisplayMenu(Storage& storage) {
 	do{
@@ -127,13 +145,27 @@ void PointOfService::SearchCont(Storage& storage) {
 	}
 }
 
+void PointOfService::DisplaySearchMenu(Storage& storage) {
+	std::cout << "\nRegistration Number" << "     " << "Cost Per Day" << "	    " << "Make" << "        " << "Model" << std::endl;
+	std::cout << "-------------------" << "     " << "------------" << "	    " << "----" << "        " << "-----" << std::endl;
+	storage.DisplaySearchResults();
+	std::cout << "\nPlease enter a number to choose the vehicle, or any key to return to main menu: " << std::endl;
+	std::cin >> Input;
+	storage.DisplayVehicleInfo(Input);
+}
+
 void PointOfService::RentVehicle(Storage& storage) {
-	std::string name;
+	std::string name, address, number;
 	std::cout << "\nHow many days do you want to rent the vehicle for: " << std::endl;
 	int days = GetIntChoice();
-	std::cout << "\nPlease enter your full name : " << std::endl;
-	std::cin >> name;
-	std::cout << "Please enter your : " << std::endl;
+	std::cout << "\nPlease enter your full name: " << std::endl;
+	name = GetStringChoice();
+	std::cout << "Please enter the first line of your address: " << std::endl;
+	address = GetStringChoice();
+	std::cout << "Please enter your postcode: " << std::endl;
+	address = address.append(GetStringChoice());
+	std::cout << "Please enter your mobile number" << std::endl;
+	number = GetStringChoice();
 }
 
 void PointOfService::RecordsMenu(Storage& storage) {
@@ -147,15 +179,6 @@ void PointOfService::RecordsMenu(Storage& storage) {
 		else if (Input == 2)
 			index++;
 	}
-}
-
-void PointOfService::DisplaySearchMenu(Storage& storage) {
-	std::cout << "\nRegistration Number" << "     " << "Cost Per Day" << "	    " << "Make" << "        " << "Model" << std::endl;
-	std::cout << "-------------------" << "     " << "------------" << "	    " << "----" << "        " << "-----" << std::endl;
-	storage.DisplaySearchResults();
-	std::cout << "\nPlease enter a number to choose the vehicle, or any key to return to main menu: " << std::endl;
-	std::cin >> Input;
-	storage.DisplayVehicleInfo(Input);
 }
 
 void PointOfService::DisplaySearchByReg() {

@@ -31,6 +31,7 @@ public:
 
 	//	ERROR HANDLING
 	int GetIntChoice();
+	std::string GetStringChoice();
 
 private:
 	int Input;
