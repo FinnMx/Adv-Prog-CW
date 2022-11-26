@@ -137,8 +137,10 @@ void PointOfService::SearchCont(Storage& storage) {
 	switch (GetIntChoice()) {
 	case 1:
 		RentVehicle(storage);
+		break;
 	case 2:
 	    RecordsMenu(storage);
+		break;
 	default:
 		storage.SaveRecords();
 		break;
