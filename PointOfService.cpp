@@ -42,8 +42,6 @@ std::string PointOfService::GetStringChoice() {
 	return Input;
 }
 
-
-
 void PointOfService::DisplayMenu(Storage& storage) {
 	do{
 		system("CLS");

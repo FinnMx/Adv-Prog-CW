@@ -12,8 +12,6 @@ public:
 	friend std::ostream& operator<<(std::ostream& os, Bike& rhs);
 
 protected:
-	//virtual int GetExtra1()override;
-	//virtual int GetExtra2()override;
 	virtual double ReturnCost()override;
 	virtual std::string GetType()override;
 	virtual void WriteSelfToDisk()override;

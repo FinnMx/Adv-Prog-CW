@@ -2,67 +2,16 @@
 <DEFECTS>
   <DEFECT>
     <SFA>
-      <FILEPATH>C:\Users\New Owner\Desktop\CORRECTAdv Programming coursework\</FILEPATH>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
       <FILENAME>PointOfService.cpp</FILENAME>
-      <LINE>4</LINE>
-      <COLUMN>16</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Variable 'PointOfService::Model' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
-    <FUNCTION>PointOfService::{ctor}</FUNCTION>
-    <DECORATED>??0PointOfService@@QEAA@XZ</DECORATED>
-    <FUNCLINE>4</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>PointOfService::Model</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Users\New Owner\Desktop\CORRECTAdv Programming coursework\</FILEPATH>
-      <FILENAME>PointOfService.cpp</FILENAME>
-      <LINE>4</LINE>
-      <COLUMN>16</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Variable 'PointOfService::Age' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
-    <FUNCTION>PointOfService::{ctor}</FUNCTION>
-    <DECORATED>??0PointOfService@@QEAA@XZ</DECORATED>
-    <FUNCLINE>4</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>PointOfService::Age</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Users\New Owner\Desktop\CORRECTAdv Programming coursework\</FILEPATH>
-      <FILENAME>PointOfService.cpp</FILENAME>
-      <LINE>4</LINE>
-      <COLUMN>16</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Variable 'PointOfService::Make' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
-    <FUNCTION>PointOfService::{ctor}</FUNCTION>
-    <DECORATED>??0PointOfService@@QEAA@XZ</DECORATED>
-    <FUNCLINE>4</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>PointOfService::Make</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Users\New Owner\Desktop\CORRECTAdv Programming coursework\</FILEPATH>
-      <FILENAME>PointOfService.cpp</FILENAME>
-      <LINE>4</LINE>
+      <LINE>5</LINE>
       <COLUMN>16</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Variable 'PointOfService::Reg' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
     <FUNCTION>PointOfService::{ctor}</FUNCTION>
     <DECORATED>??0PointOfService@@QEAA@XZ</DECORATED>
-    <FUNCLINE>4</FUNCLINE>
+    <FUNCLINE>5</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>PointOfService::Reg</targetSymbol>
     </ADDITIONALINFO>
@@ -70,16 +19,33 @@
   </DEFECT>
   <DEFECT>
     <SFA>
-      <FILEPATH>C:\Users\New Owner\Desktop\CORRECTAdv Programming coursework\</FILEPATH>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
       <FILENAME>PointOfService.cpp</FILENAME>
-      <LINE>4</LINE>
+      <LINE>5</LINE>
+      <COLUMN>16</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'PointOfService::Age' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>PointOfService::{ctor}</FUNCTION>
+    <DECORATED>??0PointOfService@@QEAA@XZ</DECORATED>
+    <FUNCLINE>5</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>PointOfService::Age</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>PointOfService.cpp</FILENAME>
+      <LINE>5</LINE>
       <COLUMN>16</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Variable 'PointOfService::Extra1' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
     <FUNCTION>PointOfService::{ctor}</FUNCTION>
     <DECORATED>??0PointOfService@@QEAA@XZ</DECORATED>
-    <FUNCLINE>4</FUNCLINE>
+    <FUNCLINE>5</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>PointOfService::Extra1</targetSymbol>
     </ADDITIONALINFO>
@@ -87,18 +53,52 @@
   </DEFECT>
   <DEFECT>
     <SFA>
-      <FILEPATH>C:\Users\New Owner\Desktop\CORRECTAdv Programming coursework\</FILEPATH>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
       <FILENAME>PointOfService.cpp</FILENAME>
-      <LINE>4</LINE>
+      <LINE>5</LINE>
+      <COLUMN>16</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'PointOfService::Model' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>PointOfService::{ctor}</FUNCTION>
+    <DECORATED>??0PointOfService@@QEAA@XZ</DECORATED>
+    <FUNCLINE>5</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>PointOfService::Model</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>PointOfService.cpp</FILENAME>
+      <LINE>5</LINE>
       <COLUMN>16</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>Variable 'PointOfService::Extra2' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
     <FUNCTION>PointOfService::{ctor}</FUNCTION>
     <DECORATED>??0PointOfService@@QEAA@XZ</DECORATED>
-    <FUNCLINE>4</FUNCLINE>
+    <FUNCLINE>5</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>PointOfService::Extra2</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>PointOfService.cpp</FILENAME>
+      <LINE>5</LINE>
+      <COLUMN>16</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'PointOfService::Make' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>PointOfService::{ctor}</FUNCTION>
+    <DECORATED>??0PointOfService@@QEAA@XZ</DECORATED>
+    <FUNCLINE>5</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>PointOfService::Make</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>

@@ -164,11 +164,7 @@ void Storage::RetrieveVehicleInfo(int op) {
 }
 
 void Storage::DisplayVehicleInfo() {
-	//v = ReturnedFromSearch[op - 1];
-	//v->ReturnAllRecords();
-
 	v->DisplaySpecifics();
-	//ReturnedFromSearch.clear();
 }
 
 void Storage::SaveRecords(){
