@@ -14,11 +14,16 @@ public:
 
 	void DisplayAllVehicles();
 	void DisplaySearchResults();
-	void DisplayVehicleInfo(int op);
+	void DisplayVehicleInfo();
+	void RetrieveVehicleInfo(int op);
 	void DisplayRecord(int& record);
+
+	std::string ReturnDate(int offset);
 
 	void ReadFromDisk(std::string dir);
 	void WriteToDisk();
+
+	void InsertRecord(int days, std::string name, std::string address);
 	void SaveRecords();
 
 	void AddVehicle(char model[31], char make[31], char reg[9], int age, int extra1, int extra2, int op);

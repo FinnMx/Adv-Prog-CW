@@ -1,3 +1,6 @@
-﻿  PointOfService.cpp
-C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\PointOfService.cpp(88): warning C4715: 'PointOfService::HandleUserInput': not all control paths return a value
+﻿  Record.cpp
+  Vehicle.cpp
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Vehicle.cpp(63,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Vehicle.cpp(100,28): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
   Adv Programming coursework.vcxproj -> C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\x64\Debug\Adv Programming coursework.exe

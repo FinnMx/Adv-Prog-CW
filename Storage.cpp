@@ -7,6 +7,7 @@
 #include <fstream>
 #include <list>
 #include <vector>
+#include <ctime>
 
 Storage::Storage() : v(v){
 	Storage::ReadFromDisk("Bikes");
@@ -156,16 +157,40 @@ void Storage::DisplaySearchResults() {
 	index = 0;
 }
 
-void Storage::DisplayVehicleInfo(int op) {
+void Storage::RetrieveVehicleInfo(int op) {
 	v = ReturnedFromSearch[op - 1];
 	v->ReturnAllRecords();
-
-	ReturnedFromSearch[op-1]->DisplaySpecifics();
 	ReturnedFromSearch.clear();
+}
+
+void Storage::DisplayVehicleInfo() {
+	//v = ReturnedFromSearch[op - 1];
+	//v->ReturnAllRecords();
+
+	v->DisplaySpecifics();
+	//ReturnedFromSearch.clear();
 }
 
 void Storage::SaveRecords(){
 	v->SaveRecords();
+}
+
+void Storage::InsertRecord(int days, std::string name, std::string address) {
+	srand(time(nullptr));
+	int randID = 1 + (std::rand() % (1000));
+
+	Record r(v->ReturnNextRecNum(), ReturnDate(0), ReturnDate(days), days, v->ReturnTotalCost(days), name, address, randID);
+	v->InsertRecord(r);
+}
+
+std::string Storage::ReturnDate(int offset) {
+	std::time_t t = std::time(0);
+	std::tm* date = std::localtime(&t);
+	std::string day = std::to_string(date->tm_mday + offset);
+	std::string month = std::to_string(date->tm_mon + 1);
+	std::string year = std::to_string(date->tm_year + 1900);
+	std::string formatted = day.append("/").append(month).append("/").append(year);
+	return formatted;
 }
 
 void Storage::DisplayRecord(int& record) {

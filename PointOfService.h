@@ -12,8 +12,8 @@ public:
 	void CarSearchMenu(Storage& storage);
 	void BikeSearchMenu(Storage& storage);
 
-	void DisplaySearchMenu(Storage& storage);
-	void SearchCont(Storage& storage);
+	int DisplaySearchMenu(Storage& storage);
+	void SearchCont(Storage& storage, int VehicleIndex);
 
 	void RentVehicle(Storage& storage);
 	void RecordsMenu(Storage& storage);

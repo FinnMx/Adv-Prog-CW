@@ -29,7 +29,7 @@ int PointOfService::GetIntChoice() {
 }
 
 std::string PointOfService::GetStringChoice() {
-	std::string Input;
+	std::string Input = "";
 
 	std::cin.ignore();
 	std::getline(std::cin, Input);
@@ -106,7 +106,7 @@ void PointOfService::CarSearchMenu(Storage& storage) {
 		return;
 		break;
 	}
-	SearchCont(storage);
+	SearchCont(storage, DisplaySearchMenu(storage));
 }
 
 void PointOfService::BikeSearchMenu(Storage& storage) {
@@ -128,32 +128,40 @@ void PointOfService::BikeSearchMenu(Storage& storage) {
 		return;
 		break;
 	}
-	SearchCont(storage);
+	SearchCont(storage, DisplaySearchMenu(storage));
 }
 
-void PointOfService::SearchCont(Storage& storage) {
-	DisplaySearchMenu(storage);
-	std::cout << "\n1) Rent Vehicle\n2) View historic rentals\n9) Return to main menu" << std::endl;
-	switch (GetIntChoice()) {
-	case 1:
-		RentVehicle(storage);
-		break;
-	case 2:
-	    RecordsMenu(storage);
-		break;
-	default:
-		storage.SaveRecords();
-		break;
+void PointOfService::SearchCont(Storage& storage, int VehicleIndex) {
+	int op = 0;
+	while(op != 9){
+		storage.DisplayVehicleInfo();
+		std::cout << "\n1) Rent Vehicle\n2) View historic rentals\n9) Return to main menu" << std::endl;
+		op = GetIntChoice();
+		switch (op) {
+		case 1:
+			RentVehicle(storage);
+			break;
+		case 2:
+			RecordsMenu(storage);
+			break;
+		case 9:
+			storage.SaveRecords();
+			break;
+		default:
+			std::cout << "\nPlease enter a valid choice..." << std::endl;
+			break;
+		}
 	}
 }
 
-void PointOfService::DisplaySearchMenu(Storage& storage) {
+int PointOfService::DisplaySearchMenu(Storage& storage) {
 	std::cout << "\nRegistration Number" << "     " << "Cost Per Day" << "	    " << "Make" << "        " << "Model" << std::endl;
 	std::cout << "-------------------" << "     " << "------------" << "	    " << "----" << "        " << "-----" << std::endl;
 	storage.DisplaySearchResults();
 	std::cout << "\nPlease enter a number to choose the vehicle, or any key to return to main menu: " << std::endl;
-	std::cin >> Input;
-	storage.DisplayVehicleInfo(Input);
+	Input = GetIntChoice();
+	storage.RetrieveVehicleInfo(Input);
+	return Input;
 }
 
 void PointOfService::RentVehicle(Storage& storage) {
@@ -166,8 +174,7 @@ void PointOfService::RentVehicle(Storage& storage) {
 	address = GetStringChoice();
 	std::cout << "Please enter your postcode: " << std::endl;
 	address = address.append(GetStringChoice());
-	std::cout << "Please enter your mobile number" << std::endl;
-	number = GetStringChoice();
+	storage.InsertRecord(days,name,address);
 }
 
 void PointOfService::RecordsMenu(Storage& storage) {

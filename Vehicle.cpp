@@ -96,6 +96,14 @@ void Vehicle::ReturnAllRecords() {
 	}
 }
 
+int Vehicle::ReturnNextRecNum() {
+	return CURRENT_RECORDS + 1;
+}
+
+double Vehicle::ReturnTotalCost(int days) {
+	return (this->ReturnCost() * days);
+}
+
 void Vehicle::InsertRecord(Record r) {
 	if (CURRENT_RECORDS >= RECORD_SIZE) {
 		ResizeRecords();
@@ -118,6 +126,5 @@ void Vehicle::SaveRecords() {
 	std::ofstream file(dir.append(VehicleReg).append(".txt"));
 	for (int i = 0; i < RECORD_SIZE; i++) {
 		file << Records[i];
-		file << "\n/\n";
 	}
 }

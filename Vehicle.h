@@ -34,6 +34,8 @@ public:
 	void ResizeRecords();
 	void InsertRecord(Record r);
 	void SaveRecords();
+	int ReturnNextRecNum();
+	double ReturnTotalCost(int days);
 
 protected:
 	virtual std::string GetType() = 0; //can use typeid
