@@ -15,6 +15,10 @@ const double Record::ReturnCost() {
 	return TotalCost;
 }
 
+const int Record::ReturnDays() {
+	return RentalDays;
+}
+
 void Record::DisplayToMenu() {
 	std::cout << "\nRental:     " << RentalNum << "\nDate From:     " << DateFrom << "\nDate To :     " << DateTo << "\nRental Days :     " << RentalDays << "\nTotal Cost :     " << TotalCost << "\nCustomer Name :     " << CustomberName << "\nCustomer Address :     " << CustomerAddress << "\nCustomer Number :     " << CustomerNumber << std::endl;
 }

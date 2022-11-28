@@ -12,7 +12,7 @@ public:
 	void DisplayToMenu();
 
 	const double ReturnCost();
-	
+	const int ReturnDays();
 
 protected:
 

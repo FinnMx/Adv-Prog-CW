@@ -10,6 +10,10 @@ PointOfService::~PointOfService() {
 
 }
 
+//----------------------------------------------------------------------------
+//-------------------------------ERROR HANDLING-------------------------------
+//----------------------------------------------------------------------------
+
 int PointOfService::GetIntChoice() {
 	Input = 0;
 
@@ -41,6 +45,10 @@ std::string PointOfService::GetStringChoice() {
 	}
 	return Input;
 }
+
+//----------------------------------------------------------------------------
+//--------------------------------ACTUAL CODE---------------------------------
+//----------------------------------------------------------------------------
 
 void PointOfService::DisplayMenu(Storage& storage) {
 	do{
@@ -90,7 +98,7 @@ void PointOfService::CarSearchMenu(Storage& storage) {
 	switch (GetIntChoice()) {
 	case 1:
 		DisplaySearchByReg();
-		storage.SearchByReg(Reg);
+		storage.SearchByReg(GetStringChoice());
 		break;
 	case 2:
 		DisplaySearchBySeats();
@@ -177,14 +185,16 @@ void PointOfService::RentVehicle(Storage& storage) {
 
 void PointOfService::RecordsMenu(Storage& storage) {
 	int index = 0;
-	while (Input != 9) {
-		storage.DisplayRecord(index);
-		std::cout << "\n1) View the previous record\n2) View the next record\n9) Return to vehicle information screen" << std::endl;
-		std::cin >> Input;
-		if (Input == 1)
-			index--;
-		else if (Input == 2)
-			index++;
+	if(storage.DoRecordsExist()){
+		while (Input != 9) {
+			storage.DisplayRecord(index);
+			std::cout << "\n1) View the previous record\n2) View the next record\n9) Return to vehicle information screen" << std::endl;
+			std::cin >> Input;
+			if (Input == 1)
+				index--;
+			else if (Input == 2)
+				index++;
+		}
 	}
 }
 
@@ -214,7 +224,7 @@ void PointOfService::DisplaySearchByWheels() {
 	std::cin >> Extra2;
 }
 
-void PointOfService::HandleVehicleInput() {
+void PointOfService::HandleVehicleInput(std::string& Model, std::string& Make, std::string& Reg, int& age) {
 	std::cout << "Please enter the Model" << std::endl;
 	std::cin.ignore();
 	std::cin.getline(Model, sizeof(Model));
@@ -227,12 +237,14 @@ void PointOfService::HandleVehicleInput() {
 }
 
 void PointOfService::AddVehicle(Storage& storage) {
+	int Extra1, Extra2, Age;
+	std::string Model, Make, Reg;
 	std::cout << "\nPlease Select An Option:\n1)Car\n2)Bike" << std::endl;
 	std::cin >> Input;
+	HandleVehicleInput(Model, Make, Reg, Age);
 	switch (Input)
 	{
 	case 1:
-		HandleVehicleInput();
 		std::cout << "Please enter the number of doors" << std::endl;
 		std::cin >> Extra1;
 		std::cout << "Please enter the number of seats" << std::endl;
@@ -240,7 +252,6 @@ void PointOfService::AddVehicle(Storage& storage) {
 		storage.AddVehicle(Model,Make,Reg,Age,Extra1,Extra2,Input);
 		break;
 	case 2:
-		HandleVehicleInput();
 		std::cout << "Please enter the engine size" << std::endl;
 		std::cin >> Extra1;
 		std::cout << "Please enter the number of wheels" << std::endl;

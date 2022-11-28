@@ -43,7 +43,7 @@ void Vehicle::DisplaySpecifics() {
 	system("CLS");
 	std::cout << VehicleReg << ": " << VehicleMake << " " << VehicleModel << "\n--------------------" << std::endl;
 	if (RECORD_SIZE != 0)
-		std::cout << "\nCost Per Day: " << std::fixed << std::setprecision(2) << ReturnCost() << "\nTotal Rented Income: " << std::fixed << std::setprecision(2) << ReturnTotalRentedIncome() << "\nTotal Days Rented:" << std::endl;
+		std::cout << "\nCost Per Day: " << std::fixed << std::setprecision(2) << ReturnCost() << "\nTotal Rented Income: " << std::fixed << std::setprecision(2) << ReturnTotalRentedIncome() << "\nTotal Days Rented: " << ReturnTotalRentedDays() << std::endl;
 	else
 		std::cout << "\nNo records exist for the vehicle..." << std::endl;
 }
@@ -54,6 +54,14 @@ const double Vehicle::ReturnTotalRentedIncome() {
 		total += Records[i].ReturnCost();
 	}
 	return total;
+}
+
+const int Vehicle::ReturnTotalRentedDays() {
+	int days = 0;
+	for (int i = 0; i < RECORD_SIZE; i++) {
+		days += Records[i].ReturnDays();
+	}
+	return days;
 }
 
 //method may seem long but the if blocks stop the user from going over/out of bounds of the record list and makes the system work nicely

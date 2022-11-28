@@ -18,6 +18,8 @@ public:
 	void RetrieveVehicleInfo(int op);
 	void DisplayRecord(int& record);
 
+	bool DoRecordsExist();
+
 	std::string ReturnDate(int offset);
 
 	void ReadFromDisk(std::string dir);
@@ -32,7 +34,7 @@ public:
 	void SortByCost();
 	void SortByReg();
 
-	void SearchByReg(char reg[9]);
+	void SearchByReg(std::string reg);
 	void SearchBySeats(int seats);
 	void SearchByDoors(int doors);
 	void SearchByEngine(int engsize);

@@ -45,6 +45,7 @@ protected:
 private:
 	//private methods...
 	const double ReturnTotalRentedIncome();
+	const int ReturnTotalRentedDays();
 
 	//record array (might not be the best way to do this!)
 	size_t RECORD_SIZE;

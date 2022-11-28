@@ -1,18 +1,4 @@
-﻿  Bike.cpp
-  Car.cpp
-  main.cpp
-  PointOfService.cpp
-  Record.cpp
-  Storage.cpp
-C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Storage.cpp(175,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Vehicle.cpp
-C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Vehicle.cpp(63,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Vehicle.cpp(100,28): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-  Running Code Analysis for C/C++...
-  Generating Code...
-C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\PointOfService.cpp(86): warning C4715: 'PointOfService::HandleUserInput': not all control paths return a value
+﻿  Vehicle.cpp
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Vehicle.cpp(71,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Vehicle.cpp(108,28): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   Adv Programming coursework.vcxproj -> C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\x64\Debug\Adv Programming coursework.exe
-C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\PointOfService.cpp(5): warning C26495: Variable 'PointOfService::Reg' is uninitialized. Always initialize a member variable (type.6).
-C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Record.cpp(3): warning C26495: Variable 'Record::RentalNum' is uninitialized. Always initialize a member variable (type.6).
-C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Storage.cpp(161): warning C26451: Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2).
-C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Vehicle.cpp(90): warning C6385: Reading invalid data from 'line':  the readable size is 'std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > [9] line' bytes, but '-320' bytes may be read.

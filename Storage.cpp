@@ -98,10 +98,10 @@ void Storage::SortByReg() {
 	vehicles.sort(CompareReg());
 }
 
-void Storage::SearchByReg(char reg[9]) {
+void Storage::SearchByReg(std::string reg) {
 	std::list<Vehicle*>::iterator it(vehicles.begin());
 	while (it != vehicles.end()) {
-		if ((**it).CompareReg(reg) == 0) {
+		if ((**it).CompareReg(reg.c_str()) == 0) {
 			ReturnedFromSearch.push_back(*it);
 		}
 		it++;
@@ -161,6 +161,16 @@ void Storage::RetrieveVehicleInfo(int op) {
 	v = ReturnedFromSearch[op - 1];
 	v->ReturnAllRecords();
 	ReturnedFromSearch.clear();
+}
+
+//this method could be classified as pointless considering the fact that we have already returned the state of records, 
+//however another menu (without a display records) would need to be implemented if we were to remove this.
+//additionally were reusing another function to actually check the state so it isnt the most stupid way of doing this.
+bool Storage::DoRecordsExist() {
+	if (!(v->ReturnNextRecNum() - 1))
+		return false;
+	else
+		return true;
 }
 
 void Storage::DisplayVehicleInfo() {
