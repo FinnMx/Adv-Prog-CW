@@ -13,8 +13,11 @@ void Car::WriteSelfToDisk() {
 }
 
 double Car::ReturnCost() {
-
-	return (2500 - (((double)GetAge() * 150) - ((double)DoorNum * 200))) / 100;
+	double cost = (2500 - (((double)GetAge() * 150) - ((double)DoorNum * 200))) / 100;
+	if (cost > 10)
+		return cost;
+	else
+		return 10.00;
 }
 
 std::string Car::GetType() {

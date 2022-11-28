@@ -9,7 +9,7 @@ class Vehicle
 {
 public:
 	//constructor stuff
-	Vehicle(const char* Model, const char* Make, const char* Reg, int Age);
+	Vehicle(std::string Model, std::string Make, std::string Reg, int Age);
 	~Vehicle();
 
 	//comparison functions
@@ -54,7 +54,9 @@ private:
 
 	int VehicleAge;
 	//change so it can be dynamic
-	char VehicleModel[31], VehicleMake[31], VehicleReg[9];
+    char* VehicleModel;
+	char* VehicleMake;
+	char* VehicleReg;
 
 };
 

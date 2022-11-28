@@ -6,29 +6,21 @@ public:
 	PointOfService();
 	~PointOfService();
 
-	void DisplayMenu(Storage &storage);
-	bool HandleUserInput(Storage &storage);
+	void DisplayMenu();
+	bool HandleUserInput();
 
-	void CarSearchMenu(Storage& storage);
-	void BikeSearchMenu(Storage& storage);
+	void CarSearchMenu();
+	void BikeSearchMenu();
 
-	int DisplaySearchMenu(Storage& storage);
-	void SearchCont(Storage& storage, int VehicleIndex);
+	int DisplaySearchMenu();
+	void SearchCont(int VehicleIndex);
 
-	void RentVehicle(Storage& storage);
-	void RecordsMenu(Storage& storage);
+	void RentVehicle();
+	void RecordsMenu();
 
-	/*
-	void DisplaySearchByReg();
-	void DisplaySearchBySeats();
-	void DisplaySearchByDoors();
-	void DisplaySearchByEngine();
-	void DisplaySearchByWheels();
-	*/
-
-	void AddVehicle(Storage& storage);
+	void AddVehicle();
 	void HandleVehicleInput(std::string& Model, std::string& Make, std::string& Reg, int& age);
-	void RemoveVehicle(Storage& storage);
+	void RemoveVehicle();
 
 
 	//	ERROR HANDLING
@@ -39,5 +31,6 @@ public:
 
 private:
 	int Input;
+	Storage storage = Storage();
 };
 

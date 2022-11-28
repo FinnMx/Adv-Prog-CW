@@ -9,14 +9,11 @@ Vehicle::~Vehicle() {
 
 }
 
-Vehicle::Vehicle(const char* Model,const char* Make,const char* Reg, int Age) {
-	strcpy_s(VehicleModel, Model);
-	strcpy_s(VehicleMake, Make);
-	strcpy_s(VehicleReg, Reg);
-	VehicleAge = Age;
-	this->Records = Records;
-	RECORD_SIZE = 0;
-	CURRENT_RECORDS = 0;
+Vehicle::Vehicle(std::string Model, std::string Make, std::string Reg, int Age) : VehicleAge(Age), RECORD_SIZE(0), CURRENT_RECORDS(0), Records(Records),
+VehicleModel(strcpy(new char[Model.length() + 1], Model.c_str())),
+VehicleMake(strcpy(new char[Make.length() + 1], Make.c_str())),
+VehicleReg(strcpy(new char[Reg.length() + 1], Reg.c_str())) {
+
 }
 
 std::string Vehicle::ReturnDataForSave() {

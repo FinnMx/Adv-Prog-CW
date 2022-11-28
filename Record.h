@@ -4,6 +4,7 @@
 class Record
 {
 public:
+	//for some reason this defualt constructor is needed?
 	Record();
 	Record(int rentalNum, std::string dateFrom, std::string dateTo, int rentalDays, double totalCost, std::string customberName, std::string customerAddress, int customerNumber);
 	~Record();

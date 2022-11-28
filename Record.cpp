@@ -1,5 +1,6 @@
 #include "Record.h"
 
+//for some reason this defualt constructor is needed?
 Record::Record() {
 
 }

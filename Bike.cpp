@@ -14,8 +14,11 @@ void Bike::WriteSelfToDisk() {
 }
 
 double Bike::ReturnCost() {
-
-	return ((1500 + (double)EngSize) - ((1500 + EngSize) % 100)) / 100;
+	double cost = ((1500 + (double)EngSize) - ((1500 + EngSize) % 100)) / 100;
+	if (cost > 10)
+		return cost;
+	else
+		return 10.00;
 }
 
 std::string Bike::GetType() {
