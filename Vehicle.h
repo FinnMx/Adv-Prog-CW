@@ -9,7 +9,7 @@ class Vehicle
 {
 public:
 	//constructor stuff
-	Vehicle(char* Model, char* Make, char* Reg, int Age);
+	Vehicle(const char* Model, const char* Make, const char* Reg, int Age);
 	~Vehicle();
 
 	//comparison functions

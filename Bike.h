@@ -3,7 +3,7 @@
 class Bike : public Vehicle
 {
 public:
-	Bike(char* Model, char* Make, char* Reg, int Age, int Eng, int Wheels);
+	Bike(const char* Reg, const char* Make, const char* Model, int Age, int Eng, int Wheels);
 	~Bike();
 
 	bool CompareWheels(int wheels);

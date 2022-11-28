@@ -60,27 +60,27 @@ void Storage::WriteToDisk() {
 	}
 }
 
-void Storage::AddVehicle(char model[31], char make[31], char reg[9], int age, int extra1, int extra2, int op) {
+void Storage::AddVehicle(std::string model, std::string make, std::string reg, int age, int extra1, int extra2, int op) {
 	switch (op) {
 	case 1:
 	{
-		Car* c = new Car(reg, make, model, age, extra1, extra2);
+		Car* c = new Car(reg.c_str(), make.c_str(), model.c_str(), age, extra1, extra2);
 		vehicles.push_back(c);
 	}
 	break;
 	case 2:
 	{
-		Bike* b = new Bike(reg, make, model, age, extra1, extra2);
+		Bike* b = new Bike(reg.c_str(), make.c_str(), model.c_str(), age, extra1, extra2);
 		vehicles.push_back(b);
 	}
 	break;
 	}
 }
 
-void Storage::RemoveVehicle(const char reg[9]) {
+void Storage::RemoveVehicle(std::string reg) {
 	std::list<Vehicle*>::iterator it(vehicles.begin());
 	while (it != vehicles.end()) {
-		if ((**it).CompareReg(reg) == 0) {
+		if ((**it).CompareReg(reg.c_str()) == 0) {
 			std::remove((**it).ReturnFilePath().c_str());
 			delete(*it);
 			vehicles.remove((*it));

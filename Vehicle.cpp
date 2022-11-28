@@ -9,7 +9,7 @@ Vehicle::~Vehicle() {
 
 }
 
-Vehicle::Vehicle(char* Model, char* Make, char* Reg, int Age) {
+Vehicle::Vehicle(const char* Model,const char* Make,const char* Reg, int Age) {
 	strcpy_s(VehicleModel, Model);
 	strcpy_s(VehicleMake, Make);
 	strcpy_s(VehicleReg, Reg);

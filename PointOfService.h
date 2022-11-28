@@ -18,11 +18,13 @@ public:
 	void RentVehicle(Storage& storage);
 	void RecordsMenu(Storage& storage);
 
+	/*
 	void DisplaySearchByReg();
 	void DisplaySearchBySeats();
 	void DisplaySearchByDoors();
 	void DisplaySearchByEngine();
 	void DisplaySearchByWheels();
+	*/
 
 	void AddVehicle(Storage& storage);
 	void HandleVehicleInput(std::string& Model, std::string& Make, std::string& Reg, int& age);
@@ -32,12 +34,10 @@ public:
 	//	ERROR HANDLING
 	int GetIntChoice();
 	std::string GetStringChoice();
+	std::string GetRegChoice();
+	bool CheckRegChars(std::string reg);
 
 private:
 	int Input;
-
-	//vars for input of vehicle creation... create locally within functions
-	//int Extra1, Extra2, Age;
-	//char Model[31], Make[31], Reg[9];
 };
 
