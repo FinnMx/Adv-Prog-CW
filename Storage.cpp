@@ -15,7 +15,14 @@ Storage::Storage() : v(v){
 }
 
 Storage::~Storage() {
-
+	for (Vehicle* v : vehicles) {
+		delete v;
+		v = nullptr;
+	}
+	for (Vehicle* v : ReturnedFromSearch) {
+		delete v;
+		v = nullptr;
+	}
 }
 
 void Storage::DisplayAllVehicles() {
@@ -27,18 +34,16 @@ void Storage::DisplayAllVehicles() {
 	index = 0;
 }
 
-//Cars and bikes should know where to read themselves
 void Storage::ReadFromDisk(std::string dir) {
-	//this shits aids fix up
 	//routine to get a list of each doccument in the vehicle list folder using c++ 17 filesystem lib...
 	std::string tmp;
-	char tmpval[6][31];
+	std::string tmpval[6];
 	for (auto const& dir_entry : fs::directory_iterator{ dir }) {
 		//read from the current tmp string store of the file dir.
 		std::ifstream file(dir_entry.path().string());
 		int i(0);
 		while (std::getline(file, tmp)) {
-			strcpy_s(tmpval[i], tmp.c_str());
+			tmpval[i] = tmp;
 			i++;
 		}
 		if (dir == "Bikes") {
@@ -64,13 +69,13 @@ void Storage::AddVehicle(std::string model, std::string make, std::string reg, i
 	switch (op) {
 	case 1:
 	{
-		Car* c = new Car(reg.c_str(), make.c_str(), model.c_str(), age, extra1, extra2);
+		Car* c = new Car(reg, make, model, age, extra1, extra2);
 		vehicles.push_back(c);
 	}
 	break;
 	case 2:
 	{
-		Bike* b = new Bike(reg.c_str(), make.c_str(), model.c_str(), age, extra1, extra2);
+		Bike* b = new Bike(reg, make, model, age, extra1, extra2);
 		vehicles.push_back(b);
 	}
 	break;
@@ -157,10 +162,16 @@ void Storage::DisplaySearchResults() {
 	index = 0;
 }
 
-void Storage::RetrieveVehicleInfo(int op) {
-	v = ReturnedFromSearch[op - 1];
-	v->ReturnAllRecords();
-	ReturnedFromSearch.clear();
+bool Storage::RetrieveVehicleInfo(int op) {
+	if (ReturnedFromSearch.size() != 0 && (op -1) <= ReturnedFromSearch.size()) {
+		v = ReturnedFromSearch[op - 1];
+		v->ReturnAllRecords();
+		ReturnedFromSearch.clear();
+		return true;
+	}
+	else
+		return false;
+
 }
 
 //this method could be classified as pointless considering the fact that we have already returned the state of records, 
@@ -188,7 +199,9 @@ void Storage::InsertRecord(int days, std::string name, std::string address) {
 	Record r(v->ReturnNextRecNum(), ReturnDate(0), ReturnDate(days), days, v->ReturnTotalCost(days), name, address, randID);
 	v->InsertRecord(r);
 }
-
+//i couldnt figure out a way to get a future date based on days rented, i saw some librarys e.t.c online but it seems like
+//more effort than what its worth, it isnt really an integral part of the system. i could of just forced the user to enter formatted
+//dates but this seems unintuitive.
 std::string Storage::ReturnDate(int offset) {
 	std::time_t t = std::time(0);
 	std::tm* date = std::localtime(&t);

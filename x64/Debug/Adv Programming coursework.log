@@ -1,13 +1,4 @@
-﻿  Bike.cpp
-  Car.cpp
-  PointOfService.cpp
-  Record.cpp
-  Storage.cpp
-C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Storage.cpp(185,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Vehicle.cpp
-C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Vehicle.cpp(68,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Vehicle.cpp(105,28): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-  main.cpp
-  Generating Code...
-C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\PointOfService.cpp(118): warning C4715: 'PointOfService::HandleUserInput': not all control paths return a value
-  Adv Programming coursework.vcxproj -> C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\x64\Debug\Adv Programming coursework.exe
+﻿  PointOfService.cpp
+C:\Users\New Owner\Desktop\MEMORY CLEANING ADVPROG\Adv-Prog-CW\PointOfService.cpp(120): warning C4715: 'PointOfService::HandleUserInput': not all control paths return a value
+C:\Users\New Owner\Desktop\MEMORY CLEANING ADVPROG\Adv-Prog-CW\PointOfService.cpp(197): warning C4715: 'PointOfService::DisplaySearchMenu': not all control paths return a value
+  Adv Programming coursework.vcxproj -> C:\Users\New Owner\Desktop\MEMORY CLEANING ADVPROG\Adv-Prog-CW\x64\Debug\Adv Programming coursework.exe

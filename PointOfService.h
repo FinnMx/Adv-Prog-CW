@@ -30,7 +30,7 @@ public:
 	bool CheckRegChars(std::string reg);
 
 private:
-	int Input;
+
 	Storage storage = Storage();
 };
 

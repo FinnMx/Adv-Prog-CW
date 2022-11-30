@@ -1,6 +1,6 @@
 #include "Bike.h"
 
-Bike::Bike(const char* Reg,const char* Make, const char* Model, int Age, int Eng, int Wheels) : EngSize(Eng), WheelNum(Wheels), Vehicle(Model, Make, Reg, Age) {
+Bike::Bike(std::string Reg, std::string Make, std::string Model, int Age, int Eng, int Wheels) : EngSize(Eng), WheelNum(Wheels), Vehicle(Model, Make, Reg, Age) {
 
 }
 

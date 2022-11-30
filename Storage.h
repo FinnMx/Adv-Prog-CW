@@ -15,7 +15,7 @@ public:
 	void DisplayAllVehicles();
 	void DisplaySearchResults();
 	void DisplayVehicleInfo();
-	void RetrieveVehicleInfo(int op);
+	bool RetrieveVehicleInfo(int op);
 	void DisplayRecord(int& record);
 
 	bool DoRecordsExist();

@@ -3,7 +3,7 @@
 class Bike : public Vehicle
 {
 public:
-	Bike(const char* Reg, const char* Make, const char* Model, int Age, int Eng, int Wheels);
+	Bike(std::string Reg, std::string Make, std::string Model, int Age, int Eng, int Wheels);
 	~Bike();
 
 	bool CompareWheels(int wheels);

@@ -6,10 +6,12 @@
 #include <assert.h>
 
 Vehicle::~Vehicle() {
-
+	delete[] VehicleModel;
+	delete[] VehicleMake;
+	delete[] VehicleReg;
 }
 
-Vehicle::Vehicle(std::string Model, std::string Make, std::string Reg, int Age) : VehicleAge(Age), RECORD_SIZE(0), CURRENT_RECORDS(0), Records(Records),
+Vehicle::Vehicle(const std::string Model,const std::string Make,const std::string Reg, int Age) : VehicleAge(Age), RECORD_SIZE(0), CURRENT_RECORDS(0), Records(Records),
 VehicleModel(strcpy(new char[Model.length() + 1], Model.c_str())),
 VehicleMake(strcpy(new char[Make.length() + 1], Make.c_str())),
 VehicleReg(strcpy(new char[Reg.length() + 1], Reg.c_str())) {
@@ -32,6 +34,9 @@ void Vehicle::DisplayToSearchMenu() {
 	std::cout << "   " << VehicleReg << "              " << std::fixed << std::setprecision(2) << ReturnCost() << "           " << VehicleMake << "        " << VehicleModel << std::endl;
 }
 
+//JUSTIFICATION FOR USING A 'GETTYPE' METHOD INSTEAD OF TYPEID.NAME!!
+//TypeID returns the structs name including if it is a class of structure, when doing comparisons of 2 typeids its fine but when
+//using it to return a string it requires tinkering to just get the raw name.
 const std::string Vehicle::ReturnFilePath() {
 	return GetType().append("s/").append(VehicleReg).append(".txt");
 }

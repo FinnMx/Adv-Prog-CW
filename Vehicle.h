@@ -9,7 +9,7 @@ class Vehicle
 {
 public:
 	//constructor stuff
-	Vehicle(std::string Model, std::string Make, std::string Reg, int Age);
+	Vehicle(const std::string Model, const std::string Make, std::string Reg, int Age);
 	~Vehicle();
 
 	//comparison functions
@@ -38,7 +38,7 @@ public:
 	double ReturnTotalCost(int days);
 
 protected:
-	virtual std::string GetType() = 0; //can use typeid
+	virtual std::string GetType() = 0; //I KNOWW YOU CAN USE TYPEID to return a std::type_info, read the justification for the method within my .cpp.
 	const int GetAge();
 
 
@@ -54,9 +54,9 @@ private:
 
 	int VehicleAge;
 	//change so it can be dynamic
-    char* VehicleModel;
-	char* VehicleMake;
-	char* VehicleReg;
+	const char* VehicleModel;
+	const char* VehicleMake;
+	const char* VehicleReg;
 
 };
 
