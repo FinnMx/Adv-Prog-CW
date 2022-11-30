@@ -18,7 +18,7 @@ PointOfService::~PointOfService() {
 
 int PointOfService::GetIntChoice() {
 	std::cin.clear();
-	std::cout << "\nPlease enter a number: \n";
+	std::cout << "\n-->: ";
 	int Input = 0;
 	std::cin >> Input;
 
@@ -27,7 +27,7 @@ int PointOfService::GetIntChoice() {
 		std::cin.clear();
 		std::cin.ignore(INT_MAX, '\n');
 
-		std::cout << "\nPlease enter a number: \n";
+		std::cout << "\nPlease enter a number: ";
 		std::cin >> std::setw(1) >> Input;
 	}
 	return Input;
@@ -35,7 +35,7 @@ int PointOfService::GetIntChoice() {
 
 std::string PointOfService::GetStringChoice() {
 	std::cin.clear();
-	std::cout << "\nPlease enter: \n";
+	std::cout << "\n-->: ";
 	std::string Input = "";
 	std::getline(std::cin, Input);
 	while (!std::cin.good()) {
@@ -49,15 +49,16 @@ std::string PointOfService::GetStringChoice() {
 
 std::string PointOfService::GetRegChoice() {
 	std::cin.clear();
-	std::cout << "\nPlease enter a correctly formatted Reg (XX00 XXX): \n";
+	std::cout << "\n-->: ";
 	std::string Reg = "";
 	std::getline(std::cin, Reg);
 	while (!CheckRegChars(Reg)) {
 		std::cout << "\nINVALID INPUT..." << std::endl;
 		std::cin.clear();
-		std::cout << "\nPlease enter a correctly formatted Reg (XX00 XXX): \n";
+		std::cout << "\nPlease enter a correctly formatted Reg (XX00 XXX): ";
 		std::getline(std::cin, Reg);
 	}
+	std::transform(Reg.begin(), Reg.end(), Reg.begin(), ::toupper);
 	return Reg;
 }
 
