@@ -26,12 +26,10 @@ Storage::~Storage() {
 }
 
 void Storage::DisplayAllVehicles() {
-	std::list<Vehicle*>::iterator it(vehicles.begin());
-	while (it != vehicles.end()) {
-		std::cout << ++index << ")";
-		(**it++).DisplayToMenu();
+	std::list<Vehicle*>::iterator it;
+	for (it = vehicles.begin(); it != vehicles.end(); it++) {
+		(**it).DisplayToMenu();
 	}
-	index = 0;
 }
 
 void Storage::ReadFromDisk(std::string dir) {

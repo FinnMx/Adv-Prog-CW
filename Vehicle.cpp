@@ -9,6 +9,7 @@ Vehicle::~Vehicle() {
 	delete[] VehicleModel;
 	delete[] VehicleMake;
 	delete[] VehicleReg;
+	delete[] Records;
 }
 
 Vehicle::Vehicle(const std::string Model,const std::string Make,const std::string Reg, int Age) : VehicleAge(Age), RECORD_SIZE(0), CURRENT_RECORDS(0), Records(Records),
@@ -27,7 +28,7 @@ std::string Vehicle::ReturnDataForSave() {
 
 
 void Vehicle::DisplayToMenu() {
-	std::cout << "   " << VehicleReg << "                   " << std::fixed << std::setprecision(2) << ReturnCost() << "                  " << GetType() << std::endl;
+	std::cout << "     " << VehicleReg << "                   " << std::fixed << std::setprecision(2) << ReturnCost() << "                  " << GetType() << std::endl;
 }  
 
 void Vehicle::DisplayToSearchMenu() {
@@ -94,7 +95,6 @@ void Vehicle::ReturnAllRecords() {
 	std::ifstream file(dir.append(VehicleReg).append(".txt"));
 	int i = 0;
 	std::string line[9];
-	//refactor to a for loop, cut out bare lines
 	while (std::getline(file, line[i])) {
 		if (line[i] == "/") {
 			Record r(std::stoi(line[i - 8]), line[i - 7], line[i - 6], std::stoi(line[i - 5]), std::stod(line[i - 4]), line[i - 3], line[i - 2], std::stoi(line[i - 1]));
