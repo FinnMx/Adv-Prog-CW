@@ -16,7 +16,7 @@ PointOfService::~PointOfService() {
 //-------------------------------ERROR HANDLING-------------------------------
 //----------------------------------------------------------------------------
 
-int PointOfService::GetIntChoice() {
+const int PointOfService::GetIntChoice() {
 	std::cin.clear();
 	std::cout << "\n-->: ";
 	int Input = 0;
@@ -33,7 +33,7 @@ int PointOfService::GetIntChoice() {
 	return Input;
 }
 
-std::string PointOfService::GetStringChoice() {
+const std::string PointOfService::GetStringChoice() {
 	std::cin.clear();
 	std::cout << "\n-->: ";
 	std::string Input = "";
@@ -47,7 +47,7 @@ std::string PointOfService::GetStringChoice() {
 	return Input;
 }
 
-std::string PointOfService::GetRegChoice() {
+const std::string PointOfService::GetRegChoice() {
 	std::cin.clear();
 	std::cout << "\n-->: ";
 	std::string Reg = "";
@@ -80,7 +80,6 @@ bool PointOfService::CheckRegChars(std::string reg){
 
 void PointOfService::DisplayMenu() {
 	do{
-		system("CLS");
 		std::cout << "Vehicle Rental System\n---------------------\n" << std::endl;
 		std::cout << "Registration Number          Cost Per Day          Vehicle Type" << std::endl;
 		std::cout << "-------------------          ------------          ------------" << std::endl;
@@ -112,7 +111,6 @@ bool PointOfService::HandleUserInput() {
 		storage.SortByCost();
 		break;
 	case 9:
-		storage.WriteToDisk();
 		return false;
 		break;
 	default:
@@ -125,12 +123,15 @@ void PointOfService::CarSearchMenu() {
 	switch (GetIntChoice()) {
 	case 1:
 		std::cin.ignore();
+		std::cout << "\nPlease enter the Registration:" << std::endl;
 		storage.SearchByReg(GetRegChoice());
 		break;
 	case 2:
+		std::cout << "\nPlease enter the amount of seats:" << std::endl;
 		storage.SearchBySeats(GetIntChoice());
 		break;
 	case 3:
+		std::cout << "\nPlease enter the amount of doors:" << std::endl;
 		storage.SearchByDoors(GetIntChoice());
 		break;
 	default:
@@ -146,12 +147,15 @@ void PointOfService::BikeSearchMenu() {
 	switch (GetIntChoice()) {
 	case 1:
 		std::cin.ignore();
+		std::cout << "\nPlease enter the Registration:" << std::endl;
 		storage.SearchByReg(GetRegChoice());
 		break;
 	case 2:
+		std::cout << "\nPlease enter the Engine size:" << std::endl;
 		storage.SearchByEngine(GetIntChoice());
 		break;
 	case 3:
+		std::cout << "\nPlease enter the amount of Wheels:" << std::endl;
 		storage.SearchByWheels(GetIntChoice());
 		break;
 	default:
@@ -176,6 +180,7 @@ void PointOfService::SearchCont(int VehicleIndex) {
 			break;
 		case 9:
 			storage.SaveRecords();
+			system("CLS");
 			break;
 		default:
 			std::cout << "\nPlease enter a valid choice..." << std::endl;
@@ -204,10 +209,10 @@ void PointOfService::RentVehicle() {
 	std::cout << "\nPlease enter your full name: " << std::endl;
 	std::cin.ignore();
 	name = GetStringChoice();
-	std::cout << "Please enter the first line of your address: " << std::endl;
+	std::cout << "\nPlease enter the first line of your address: " << std::endl;
 	std::cin.clear();
 	address = GetStringChoice();
-	std::cout << "Please enter your postcode: " << std::endl;
+	std::cout << "\nPlease enter your postcode: " << std::endl;
 	std::cin.clear();
 	address = address.append(GetStringChoice());
 	storage.InsertRecord(days,name,address);
@@ -254,22 +259,22 @@ void PointOfService::AddVehicle() {
 		Extra1 = GetIntChoice();
 		std::cout << "Please enter the number of seats" << std::endl;
 		Extra2 = GetIntChoice();
-		storage.AddVehicle(Model,Make,Reg,Age,Extra1,Extra2,Input);
 		break;
 	case 2:
 		std::cout << "Please enter the engine size" << std::endl;
 		Extra1 = GetIntChoice();
 		std::cout << "Please enter the number of wheels" << std::endl;
 		Extra2 = GetIntChoice();
-		storage.AddVehicle(Model, Make, Reg, Age, Extra1, Extra2, Input);
 		break;
 	default:
 		std::cout << "Invalid entry, returning to menu" << std::endl;
 		break;
 	}
+	storage.AddVehicle(Model, Make, Reg, Age, Extra1, Extra2, Input);
 }
 
 void PointOfService::RemoveVehicle() {
 	std::cout << "\nPlease enter the registration of the vehicle you want to remove:" << std::endl;
+	std::cin.ignore();
 	storage.RemoveVehicle(GetRegChoice());
 }

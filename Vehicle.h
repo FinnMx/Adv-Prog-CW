@@ -31,7 +31,6 @@ public:
 	//record stuff
 	void ReturnAllRecords();
 	const std::string ReturnFilePath();
-	void ResizeRecords();
 	void InsertRecord(Record r);
 	void SaveRecords();
 	int ReturnNextRecNum();
@@ -46,7 +45,7 @@ private:
 	//private methods...
 	const double ReturnTotalRentedIncome();
 	const int ReturnTotalRentedDays();
-
+	void ResizeRecords();
 	//record array (might not be the best way to do this!)
 	size_t RECORD_SIZE;
 	size_t CURRENT_RECORDS;

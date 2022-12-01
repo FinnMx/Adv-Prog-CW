@@ -1,2 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DEFECTS></DEFECTS>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Vehicle.h</FILENAME>
+      <LINE>74</LINE>
+      <COLUMN>26</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Vehicle::GetAge' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Vehicle::GetAge</FUNCTION>
+    <DECORATED>?GetAge@Vehicle@@IEAA?BHXZ</DECORATED>
+    <FUNCLINE>74</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Car.h</FILENAME>
+      <LINE>28</LINE>
+      <COLUMN>17</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Car::CompareDoors' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Car::CompareDoors</FUNCTION>
+    <DECORATED>?CompareDoors@Car@@QEAA_NH@Z</DECORATED>
+    <FUNCLINE>28</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Car.h</FILENAME>
+      <LINE>32</LINE>
+      <COLUMN>17</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Car::CompareSeats' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Car::CompareSeats</FUNCTION>
+    <DECORATED>?CompareSeats@Car@@QEAA_NH@Z</DECORATED>
+    <FUNCLINE>32</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

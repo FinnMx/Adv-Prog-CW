@@ -1,2 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<DEFECTS></DEFECTS>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Vehicle.h</FILENAME>
+      <LINE>74</LINE>
+      <COLUMN>26</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Vehicle::GetAge' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Vehicle::GetAge</FUNCTION>
+    <DECORATED>?GetAge@Vehicle@@IEAA?BHXZ</DECORATED>
+    <FUNCLINE>74</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Bike.h</FILENAME>
+      <LINE>29</LINE>
+      <COLUMN>18</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Bike::CompareWheels' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Bike::CompareWheels</FUNCTION>
+    <DECORATED>?CompareWheels@Bike@@QEAA_NH@Z</DECORATED>
+    <FUNCLINE>29</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Bike.h</FILENAME>
+      <LINE>33</LINE>
+      <COLUMN>18</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Bike::CompareEng' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Bike::CompareEng</FUNCTION>
+    <DECORATED>?CompareEng@Bike@@QEAA_NH@Z</DECORATED>
+    <FUNCLINE>33</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Bike.cpp</FILENAME>
+      <LINE>16</LINE>
+      <COLUMN>13</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Bike::ReturnCost' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Bike::ReturnCost</FUNCTION>
+    <DECORATED>?ReturnCost@Bike@@MEAANXZ</DECORATED>
+    <FUNCLINE>16</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

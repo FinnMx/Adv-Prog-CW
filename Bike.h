@@ -19,7 +19,6 @@ protected:
 private:
 	int EngSize, WheelNum;
 
-
 };
 
 inline std::ostream& operator<<(std::ostream& os, Bike& rhs) {

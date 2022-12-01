@@ -3,7 +3,89 @@
   "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
   "runs": [
     {
-      "results": [],
+      "results": [
+        {
+          "ruleId": "C26440",
+          "message": {
+            "text": "Function 'Vehicle::GetAge' can be declared 'noexcept' (f.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Finn/Documents/GitHub/Adv-Prog-CW/Vehicle.h"
+                },
+                "region": {
+                  "startLine": 74,
+                  "startColumn": 27,
+                  "endLine": 74,
+                  "endColumn": 27
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?GetAge@Vehicle@@IEAA?BHXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26440",
+          "message": {
+            "text": "Function 'Car::CompareDoors' can be declared 'noexcept' (f.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Finn/Documents/GitHub/Adv-Prog-CW/Car.h"
+                },
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 18,
+                  "endLine": 28,
+                  "endColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?CompareDoors@Car@@QEAA_NH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26440",
+          "message": {
+            "text": "Function 'Car::CompareSeats' can be declared 'noexcept' (f.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Finn/Documents/GitHub/Adv-Prog-CW/Car.h"
+                },
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 18,
+                  "endLine": 32,
+                  "endColumn": 18
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?CompareSeats@Car@@QEAA_NH@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
       "tool": {
         "driver": {
           "name": "PREfast",
@@ -14,11 +96,22 @@
       },
       "invocations": [
         {
-          "commandLine": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x64\\c1xx.dll\" -ACf{1F7B090C-16DB-4822-966A-A93D26ED4681} -ACpmspft140.dll -Alint -D_PREFAST_ -D_AST_FE_ -Analyze -zm0x00B8C1B0 -il C:\\Users\\Finn\\AppData\\Local\\Temp\\_CL_ff4518d6ast -typedil -f Car.cpp -Ze -D_MSC_EXTENSIONS -Zp16 -pc \\:/ -D_MSC_VER=1929 -D_MSC_FULL_VER=192930139 -D_MSC_BUILD=0 -D_M_AMD64=100 -ZILP448 -D_M_X64=100 -D_WIN64 -D_WIN32 -GR -D_CPPRTTI -nologo -W 3 -diagnostics:column -D_GUARDOVERFLOW_CRT_ALLOCATORS=1 -Ot -DCODE_ANALYSIS -D_DEBUG -D_CONSOLE -D_UNICODE -DUNICODE -D_SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING -D_CRT_SECURE_NO_WARNINGS -EHs -D_CPPUNWIND -EHc -D__MSVC_RUNTIME_CHECKS -RTCs -RTCu -MDd -D_DEBUG -D_MT -D_DLL -GS -D_M_FP_PRECISE -permissive- -Zc:wchar_t -Zc:forScope -Fox64\\Debug\\Car.obj -Fdx64\\Debug\\vc142.pdb -external:W 3 -Gd -analyze:projectdirectory C:\\Users\\Finn\\Documents\\GitHub\\Adv-Prog-CW -analyze:rulesetdirectory ;C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\Team Tools\\Static Analysis Tools\\\\Rule Sets; -analyze:ruleset C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\Team Tools\\Static Analysis Tools\\Rule Sets\\NativeRecommendedRules.ruleset -analyze:quiet -analyze:plugin C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x86\\EspXEngine.dll -FC -errorreport:prompt -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Tools\\MSVC\\14.29.30133\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um -external:I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Tools\\MSVC\\14.29.30133\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Tools\\MSVC\\14.29.30133\\include -external:I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -external:I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Auxiliary\\VS\\include -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -external:I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um",
+          "commandLine": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x64\\c1xx.dll\" -ACf{1F7B090C-16DB-4822-966A-A93D26ED4681} -ACpmspft140.dll -Alint -D_PREFAST_ -D_AST_FE_ -Analyze -zm0x009FC1B0 -il C:\\Users\\Finn\\AppData\\Local\\Temp\\_CL_84fb2134ast -typedil -f Car.cpp -Ze -D_MSC_EXTENSIONS -Zp16 -pc \\:/ -D_MSC_VER=1929 -D_MSC_FULL_VER=192930139 -D_MSC_BUILD=0 -D_M_AMD64=100 -ZILP448 -D_M_X64=100 -D_WIN64 -D_WIN32 -GR -D_CPPRTTI -nologo -W 3 -diagnostics:column -D_GUARDOVERFLOW_CRT_ALLOCATORS=1 -Ot -DCODE_ANALYSIS -D_DEBUG -D_CONSOLE -D_UNICODE -DUNICODE -D_SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING -D_CRT_SECURE_NO_WARNINGS -EHs -D_CPPUNWIND -EHc -D__MSVC_RUNTIME_CHECKS -RTCs -RTCu -MDd -D_DEBUG -D_MT -D_DLL -GS -D_M_FP_PRECISE -permissive- -Zc:wchar_t -Zc:forScope -Fox64\\Debug\\Car.obj -Fdx64\\Debug\\vc142.pdb -external:W 3 -Gd -analyze:projectdirectory C:\\Users\\Finn\\Documents\\GitHub\\Adv-Prog-CW -analyze:rulesetdirectory ;C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\Team Tools\\Static Analysis Tools\\\\Rule Sets; -analyze:ruleset C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\Team Tools\\Static Analysis Tools\\Rule Sets\\CppCoreCheckFuncRules.ruleset -analyze:quiet -analyze:plugin C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX86\\x86\\EspXEngine.dll -FC -errorreport:prompt -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Tools\\MSVC\\14.29.30133\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um -external:I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Tools\\MSVC\\14.29.30133\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Tools\\MSVC\\14.29.30133\\include -external:I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Tools\\MSVC\\14.29.30133\\atlmfc\\include -external:I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Auxiliary\\VS\\include -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -external:I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um",
           "executionSuccessful": true
         }
       ],
       "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/Finn/Documents/GitHub/Adv-Prog-CW/Vehicle.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "2a3ffe3739139e2d7d7f20bfbbfbfed2"
+          }
+        },
         {
           "location": {
             "uri": "file:///C:/Users/Finn/Documents/GitHub/Adv-Prog-CW/Vehicle.cpp"
@@ -28,15 +121,7 @@
             "resultFile"
           ],
           "hashes": {
-            "md5": "c3f71c06b932c838cf12d5179dc63e26"
-          }
-        },
-        {
-          "location": {
-            "uri": "file:///c:/users/finn/documents/github/adv-prog-cw/vehicle.h"
-          },
-          "hashes": {
-            "md5": "d76d02b38be454dad3f8896082679232"
+            "md5": "434324e5de2b4a7cf4b31ef2d03d2586"
           }
         },
         {
@@ -44,7 +129,29 @@
             "uri": "file:///c:/users/finn/documents/github/adv-prog-cw/record.h"
           },
           "hashes": {
-            "md5": "9344275bab9c3a71eeff9b973b27e397"
+            "md5": "f84b4d28a3a2d6e478fb94aa82d6bc80"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Finn/Documents/GitHub/Adv-Prog-CW/Bike.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "21f4134731e207dbcdd5f5682329fbcc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Finn/Documents/GitHub/Adv-Prog-CW/Car.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "md5": "096cd1d2ac00d3affaa301fadf7a3fcf"
           }
         },
         {
@@ -56,7 +163,7 @@
             "resultFile"
           ],
           "hashes": {
-            "md5": "8a4989171b294b37fecb5d23708788f3"
+            "md5": "3c1a4cbc257d6289398e3a4f49f665b6"
           }
         },
         {
@@ -64,23 +171,7 @@
             "uri": "file:///c:/users/finn/documents/github/adv-prog-cw/storage.h"
           },
           "hashes": {
-            "md5": "b87829eaafcd135054b4398f2a6cf0e6"
-          }
-        },
-        {
-          "location": {
-            "uri": "file:///c:/users/finn/documents/github/adv-prog-cw/bike.h"
-          },
-          "hashes": {
-            "md5": "1b3a64b6e4e36e2281ef81cced3850c5"
-          }
-        },
-        {
-          "location": {
-            "uri": "file:///c:/users/finn/documents/github/adv-prog-cw/car.h"
-          },
-          "hashes": {
-            "md5": "5a514bfe3795c9730870ad28773d9abc"
+            "md5": "c8b766da705ac1f6366e9f116aa5dceb"
           }
         },
         {
@@ -92,7 +183,7 @@
             "resultFile"
           ],
           "hashes": {
-            "md5": "d2611b50960520e434b0ab17edb14f22"
+            "md5": "4e2b5f38c4ab103b7878a0ffeee45a6d"
           }
         },
         {
@@ -104,7 +195,7 @@
             "resultFile"
           ],
           "hashes": {
-            "md5": "2154cf762e87c29f953ab95e1232d239"
+            "md5": "c9de4ddc3fe30f061b1704e52773b3c6"
           }
         },
         {
@@ -112,7 +203,7 @@
             "uri": "file:///c:/users/finn/documents/github/adv-prog-cw/pointofservice.h"
           },
           "hashes": {
-            "md5": "0a021d2266b89c247beeb8d86dba25d5"
+            "md5": "be2a2ed15cde628f5f9ee4d70da8be37"
           }
         },
         {
@@ -123,7 +214,7 @@
             "analysisTarget"
           ],
           "hashes": {
-            "md5": "4d5d71e0dd467168de4247e07c10de1f"
+            "md5": "4422ff33576aaf2b73511c2bf0524701"
           }
         },
         {
@@ -134,7 +225,7 @@
             "analysisTarget"
           ],
           "hashes": {
-            "md5": "db6a656818d2548667e2d1d3191ba740"
+            "md5": "175f2a62bbe7c8c4ae4dd03e1f955ab2"
           }
         }
       ]

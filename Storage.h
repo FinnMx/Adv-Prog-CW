@@ -20,20 +20,10 @@ public:
 
 	bool DoRecordsExist();
 
-	std::string ReturnDate(int offset);
-
-	void ReadFromDisk(std::string dir);
-	void WriteToDisk();
-
 	void InsertRecord(int days, std::string name, std::string address);
 	void SaveRecords();
 
-	void AddVehicle(std::string model, std::string make, std::string reg, int age, int extra1, int extra2, int op);
-	//func pointer array to remove switch statement within addvehicle
-	void (Storage::* Choice[2])(std::string, std::string, std::string, int, int, int) = { &Storage::AddCar,&Storage::AddBike };
-	void AddCar(std::string model, std::string make, std::string reg, int age, int extra1, int extra2);
-	void AddBike(std::string model, std::string make, std::string reg, int age, int extra1, int extra2);
-
+	void AddVehicle(std::string& model, std::string& make, std::string& reg, int& age, int& extra1, int& extra2, int op);
 	void RemoveVehicle(std::string reg);
 
 	void SortByCost();
@@ -48,6 +38,15 @@ public:
 private:
 	const std::string BikeDir = "Bikes/";
 	const std::string CarDir = "Cars/";
+
+	void ReadFromDisk(std::string dir);
+	void WriteToDisk();
+
+	void AddCar(std::string model, std::string make, std::string reg, int age, int extra1, int extra2);
+	void AddBike(std::string model, std::string make, std::string reg, int age, int extra1, int extra2);
+	std::string ReturnDate(int offset);
+	//func pointer array to remove switch statement within addvehicle
+	void (Storage::* Choice[2])(std::string, std::string, std::string, int, int, int) = { &Storage::AddCar,&Storage::AddBike };
 
 	std::list<Vehicle*> vehicles;
 	std::vector<Vehicle*> ReturnedFromSearch;

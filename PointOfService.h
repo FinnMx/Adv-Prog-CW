@@ -9,6 +9,13 @@ public:
 	void DisplayMenu();
 	bool HandleUserInput();
 
+private:
+	//	ERROR HANDLING
+	const int GetIntChoice();
+	const std::string GetStringChoice();
+	const std::string GetRegChoice();
+	bool CheckRegChars(std::string reg);
+
 	void CarSearchMenu();
 	void BikeSearchMenu();
 
@@ -21,15 +28,6 @@ public:
 	void AddVehicle();
 	void HandleVehicleInput(std::string& Model, std::string& Make, std::string& Reg, int& age);
 	void RemoveVehicle();
-
-
-	//	ERROR HANDLING
-	int GetIntChoice();
-	std::string GetStringChoice();
-	std::string GetRegChoice();
-	bool CheckRegChars(std::string reg);
-
-private:
 
 	Storage storage = Storage();
 };

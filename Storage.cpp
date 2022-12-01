@@ -15,6 +15,7 @@ Storage::Storage() : v(v){
 }
 
 Storage::~Storage() {
+	WriteToDisk();
 	for (Vehicle* v : vehicles) {
 		delete v;
 		v = nullptr;
@@ -62,11 +63,12 @@ void Storage::WriteToDisk() {
 	}
 }
 
-//make an int or bool and regturn the ting
-void Storage::AddVehicle(std::string model, std::string make, std::string reg, int age, int extra1, int extra2, int op) {
+void Storage::AddVehicle(std::string& model, std::string& make, std::string& reg, int& age, int& extra1, int& extra2, int op) {
 	SearchByReg(reg);
 	if (ReturnedFromSearch.size() == 0)
 		(this->*Choice[op])(model, make, reg, age, extra1, extra2);
+	else
+		std::cout << "\nVehicle cannot be added as it already exists..." << std::endl;
 	ReturnedFromSearch.clear();
 }
 

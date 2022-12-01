@@ -1,8 +1,29 @@
-﻿  PointOfService.cpp
-  Storage.cpp
-C:\Users\New Owner\Desktop\MEMORY CLEANING ADVPROG\Adv-Prog-CW\Storage.cpp(193,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+﻿  Bike.cpp
+  Car.cpp
   main.cpp
+  PointOfService.cpp
+  Record.cpp
+  Storage.cpp
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Storage.cpp(196,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Vehicle.cpp
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Vehicle.cpp(74,27): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Vehicle.cpp(110,28): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  Running Code Analysis for C/C++...
   Generating Code...
-C:\Users\New Owner\Desktop\MEMORY CLEANING ADVPROG\Adv-Prog-CW\PointOfService.cpp(121): warning C4715: 'PointOfService::HandleUserInput': not all control paths return a value
-C:\Users\New Owner\Desktop\MEMORY CLEANING ADVPROG\Adv-Prog-CW\PointOfService.cpp(198): warning C4715: 'PointOfService::DisplaySearchMenu': not all control paths return a value
-  Adv Programming coursework.vcxproj -> C:\Users\New Owner\Desktop\MEMORY CLEANING ADVPROG\Adv-Prog-CW\x64\Debug\Adv Programming coursework.exe
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\PointOfService.cpp(119): warning C4715: 'PointOfService::HandleUserInput': not all control paths return a value
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\PointOfService.cpp(203): warning C4715: 'PointOfService::DisplaySearchMenu': not all control paths return a value
+  Adv Programming coursework.vcxproj -> C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\x64\Debug\Adv Programming coursework.exe
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Vehicle.h(74): warning C26440: Function 'Vehicle::GetAge' can be declared 'noexcept' (f.6).
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Bike.h(29): warning C26440: Function 'Bike::CompareWheels' can be declared 'noexcept' (f.6).
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Bike.h(33): warning C26440: Function 'Bike::CompareEng' can be declared 'noexcept' (f.6).
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Bike.cpp(16): warning C26440: Function 'Bike::ReturnCost' can be declared 'noexcept' (f.6).
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Car.h(28): warning C26440: Function 'Car::CompareDoors' can be declared 'noexcept' (f.6).
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Car.h(32): warning C26440: Function 'Car::CompareSeats' can be declared 'noexcept' (f.6).
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\PointOfService.cpp(7): warning C26455: Default constructor may not throw. Declare it 'noexcept' (f.6).
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Record.cpp(3): warning C26455: Default constructor may not throw. Declare it 'noexcept' (f.6).
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Record.cpp(14): warning C26440: Function 'Record::ReturnCost' can be declared 'noexcept' (f.6).
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Record.cpp(18): warning C26440: Function 'Record::ReturnDays' can be declared 'noexcept' (f.6).
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Storage.cpp(18): warning C26447: The function is declared 'noexcept' but calls function 'WriteToDisk()' which may throw exceptions (f.6).
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Vehicle.cpp(109): warning C26440: Function 'Vehicle::ReturnNextRecNum' can be declared 'noexcept' (f.6).
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Vehicle.cpp(126): warning C26440: Function 'Vehicle::RegLetter' can be declared 'noexcept' (f.6).
+C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Vehicle.cpp(130): warning C26440: Function 'Vehicle::CompareReg' can be declared 'noexcept' (f.6).

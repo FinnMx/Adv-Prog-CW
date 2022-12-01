@@ -1,18 +1,93 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><DEFECTS><DEFECT>
     <SFA>
       <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Vehicle.h</FILENAME>
+      <LINE>74</LINE>
+      <COLUMN>26</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Vehicle::GetAge' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Vehicle::GetAge</FUNCTION>
+    <DECORATED>?GetAge@Vehicle@@IEAA?BHXZ</DECORATED>
+    <FUNCLINE>74</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Bike.h</FILENAME>
+      <LINE>29</LINE>
+      <COLUMN>18</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Bike::CompareWheels' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Bike::CompareWheels</FUNCTION>
+    <DECORATED>?CompareWheels@Bike@@QEAA_NH@Z</DECORATED>
+    <FUNCLINE>29</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Bike.h</FILENAME>
+      <LINE>33</LINE>
+      <COLUMN>18</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Bike::CompareEng' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Bike::CompareEng</FUNCTION>
+    <DECORATED>?CompareEng@Bike@@QEAA_NH@Z</DECORATED>
+    <FUNCLINE>33</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Bike.cpp</FILENAME>
+      <LINE>16</LINE>
+      <COLUMN>13</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Bike::ReturnCost' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Bike::ReturnCost</FUNCTION>
+    <DECORATED>?ReturnCost@Bike@@MEAANXZ</DECORATED>
+    <FUNCLINE>16</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Car.h</FILENAME>
+      <LINE>28</LINE>
+      <COLUMN>17</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Car::CompareDoors' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Car::CompareDoors</FUNCTION>
+    <DECORATED>?CompareDoors@Car@@QEAA_NH@Z</DECORATED>
+    <FUNCLINE>28</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Car.h</FILENAME>
+      <LINE>32</LINE>
+      <COLUMN>17</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Car::CompareSeats' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Car::CompareSeats</FUNCTION>
+    <DECORATED>?CompareSeats@Car@@QEAA_NH@Z</DECORATED>
+    <FUNCLINE>32</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
       <FILENAME>PointOfService.cpp</FILENAME>
-      <LINE>5</LINE>
+      <LINE>7</LINE>
       <COLUMN>16</COLUMN>
     </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Variable 'PointOfService::Reg' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <DEFECTCODE>26455</DEFECTCODE>
+    <DESCRIPTION>Default constructor may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
     <FUNCTION>PointOfService::{ctor}</FUNCTION>
     <DECORATED>??0PointOfService@@QEAA@XZ</DECORATED>
-    <FUNCLINE>5</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>PointOfService::Reg</targetSymbol>
-    </ADDITIONALINFO>
+    <FUNCLINE>7</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
@@ -21,171 +96,88 @@
       <LINE>3</LINE>
       <COLUMN>8</COLUMN>
     </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Variable 'Record::RentalNum' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <DEFECTCODE>26455</DEFECTCODE>
+    <DESCRIPTION>Default constructor may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
     <FUNCTION>Record::{ctor}</FUNCTION>
     <DECORATED>??0Record@@QEAA@XZ</DECORATED>
     <FUNCLINE>3</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>Record::RentalNum</targetSymbol>
-    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Record.cpp</FILENAME>
+      <LINE>14</LINE>
+      <COLUMN>21</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Record::ReturnCost' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Record::ReturnCost</FUNCTION>
+    <DECORATED>?ReturnCost@Record@@QEAA?BNXZ</DECORATED>
+    <FUNCLINE>14</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Record.cpp</FILENAME>
+      <LINE>18</LINE>
+      <COLUMN>18</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Record::ReturnDays' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Record::ReturnDays</FUNCTION>
+    <DECORATED>?ReturnDays@Record@@QEAA?BHXZ</DECORATED>
+    <FUNCLINE>18</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
       <FILENAME>Storage.cpp</FILENAME>
-      <LINE>161</LINE>
-      <COLUMN>27</COLUMN>
+      <LINE>18</LINE>
+      <COLUMN>12</COLUMN>
     </SFA>
-    <DEFECTCODE>26451</DEFECTCODE>
-    <DESCRIPTION>Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2).</DESCRIPTION>
-    <FUNCTION>Storage::RetrieveVehicleInfo</FUNCTION>
-    <DECORATED>?RetrieveVehicleInfo@Storage@@QEAAXH@Z</DECORATED>
-    <FUNCLINE>160</FUNCLINE>
+    <DEFECTCODE>26447</DEFECTCODE>
+    <DESCRIPTION>The function is declared 'noexcept' but calls function 'WriteToDisk()' which may throw exceptions (f.6).</DESCRIPTION>
+    <FUNCTION>Storage::{dtor}</FUNCTION>
+    <DECORATED>??1Storage@@QEAA@XZ</DECORATED>
+    <FUNCLINE>17</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
       <FILENAME>Vehicle.cpp</FILENAME>
-      <LINE>90</LINE>
-      <COLUMN>10</COLUMN>
+      <LINE>109</LINE>
+      <COLUMN>13</COLUMN>
     </SFA>
-    <DEFECTCODE>6385</DEFECTCODE>
-    <DESCRIPTION>Reading invalid data from 'line':  the readable size is 'std::basic_string&lt;char,struct std::char_traits&lt;char&gt;,class std::allocator&lt;char&gt; &gt; [9] line' bytes, but '-320' bytes may be read.</DESCRIPTION>
-    <FUNCTION>Vehicle::ReturnAllRecords</FUNCTION>
-    <DECORATED>?ReturnAllRecords@Vehicle@@QEAAXXZ</DECORATED>
-    <FUNCLINE>82</FUNCLINE>
-    <PROBABILITY>1</PROBABILITY>
-    <RANK>4</RANK>
-    <CATEGORY>
-      <RULECATEGORY>mspft</RULECATEGORY>
-    </CATEGORY>
-    <PATH>
-      <SFA>
-        <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-        <FILENAME>Vehicle.cpp</FILENAME>
-        <LINE>83</LINE>
-        <COLUMN>13</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-        <FILENAME>Vehicle.cpp</FILENAME>
-        <LINE>84</LINE>
-        <COLUMN>15</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-        <FILENAME>Vehicle.cpp</FILENAME>
-        <LINE>85</LINE>
-        <COLUMN>5</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-        <FILENAME>Vehicle.cpp</FILENAME>
-        <LINE>86</LINE>
-        <COLUMN>13</COLUMN>
-        <KEYEVENT>
-          <ID>1</ID>
-          <KIND>declaration</KIND>
-          <IMPORTANCE>Essential</IMPORTANCE>
-          <MESSAGE>'line' is an array of 9 elements (360 bytes)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-        <FILENAME>Vehicle.cpp</FILENAME>
-        <LINE>88</LINE>
-        <COLUMN>20</COLUMN>
-        <KEYEVENT>
-          <ID>2</ID>
-          <KIND>declaration</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'line' is an Output from 'std::getline' (declared at c:\program files (x86)\microsoft visual studio\2019\professional\vc\tools\msvc\14.29.30133\include\string:82)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-        <FILENAME>Vehicle.cpp</FILENAME>
-        <LINE>88</LINE>
-        <COLUMN>20</COLUMN>
-        <KEYEVENT>
-          <ID>3</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this loop, (assume 'getline(file, line[i])-&gt;._N()')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-        <FILENAME>Vehicle.cpp</FILENAME>
-        <LINE>89</LINE>
-        <COLUMN>14</COLUMN>
-        <KEYEVENT>
-          <ID>4</ID>
-          <KIND>declaration</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'line' is an Output from 'std::==' (declared at c:\program files (x86)\microsoft visual studio\2019\professional\vc\tools\msvc\14.29.30133\include\xstring:4801)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-        <FILENAME>Vehicle.cpp</FILENAME>
-        <LINE>89</LINE>
-        <COLUMN>14</COLUMN>
-        <KEYEVENT>
-          <ID>5</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this branch, (assume '==(line[i], "/")')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-        <FILENAME>Vehicle.cpp</FILENAME>
-        <LINE>90</LINE>
-        <COLUMN>133</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-        <FILENAME>Vehicle.cpp</FILENAME>
-        <LINE>90</LINE>
-        <COLUMN>120</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-        <FILENAME>Vehicle.cpp</FILENAME>
-        <LINE>90</LINE>
-        <COLUMN>59</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-        <FILENAME>Vehicle.cpp</FILENAME>
-        <LINE>90</LINE>
-        <COLUMN>46</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-        <FILENAME>Vehicle.cpp</FILENAME>
-        <LINE>90</LINE>
-        <COLUMN>10</COLUMN>
-        <KEYEVENT>
-          <ID>6</ID>
-          <KIND>declaration</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'line' is an Output from 'std::stoi' (declared at c:\program files (x86)\microsoft visual studio\2019\professional\vc\tools\msvc\14.29.30133\include\string:88)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-        <FILENAME>Vehicle.cpp</FILENAME>
-        <LINE>90</LINE>
-        <COLUMN>10</COLUMN>
-        <KEYEVENT>
-          <ID>7</ID>
-          <KIND>usage</KIND>
-          <IMPORTANCE>Essential</IMPORTANCE>
-          <MESSAGE>Invalid read from 'line[-8]', (readable range is 0 to 8)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-    </PATH>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Vehicle::ReturnNextRecNum' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Vehicle::ReturnNextRecNum</FUNCTION>
+    <DECORATED>?ReturnNextRecNum@Vehicle@@QEAAHXZ</DECORATED>
+    <FUNCLINE>109</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Vehicle.cpp</FILENAME>
+      <LINE>126</LINE>
+      <COLUMN>20</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Vehicle::RegLetter' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Vehicle::RegLetter</FUNCTION>
+    <DECORATED>?RegLetter@Vehicle@@QEAA?BDXZ</DECORATED>
+    <FUNCLINE>126</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Vehicle.cpp</FILENAME>
+      <LINE>130</LINE>
+      <COLUMN>13</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Vehicle::CompareReg' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Vehicle::CompareReg</FUNCTION>
+    <DECORATED>?CompareReg@Vehicle@@QEAAHPEBD@Z</DECORATED>
+    <FUNCLINE>130</FUNCLINE>
+    <PATH></PATH>
   </DEFECT></DEFECTS>

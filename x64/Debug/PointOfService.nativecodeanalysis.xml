@@ -3,103 +3,85 @@
   <DEFECT>
     <SFA>
       <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-      <FILENAME>PointOfService.cpp</FILENAME>
-      <LINE>5</LINE>
-      <COLUMN>16</COLUMN>
+      <FILENAME>Vehicle.h</FILENAME>
+      <LINE>74</LINE>
+      <COLUMN>26</COLUMN>
     </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Variable 'PointOfService::Reg' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
-    <FUNCTION>PointOfService::{ctor}</FUNCTION>
-    <DECORATED>??0PointOfService@@QEAA@XZ</DECORATED>
-    <FUNCLINE>5</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>PointOfService::Reg</targetSymbol>
-    </ADDITIONALINFO>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Vehicle::GetAge' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Vehicle::GetAge</FUNCTION>
+    <DECORATED>?GetAge@Vehicle@@IEAA?BHXZ</DECORATED>
+    <FUNCLINE>74</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Bike.h</FILENAME>
+      <LINE>29</LINE>
+      <COLUMN>18</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Bike::CompareWheels' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Bike::CompareWheels</FUNCTION>
+    <DECORATED>?CompareWheels@Bike@@QEAA_NH@Z</DECORATED>
+    <FUNCLINE>29</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Bike.h</FILENAME>
+      <LINE>33</LINE>
+      <COLUMN>18</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Bike::CompareEng' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Bike::CompareEng</FUNCTION>
+    <DECORATED>?CompareEng@Bike@@QEAA_NH@Z</DECORATED>
+    <FUNCLINE>33</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Car.h</FILENAME>
+      <LINE>28</LINE>
+      <COLUMN>17</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Car::CompareDoors' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Car::CompareDoors</FUNCTION>
+    <DECORATED>?CompareDoors@Car@@QEAA_NH@Z</DECORATED>
+    <FUNCLINE>28</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Car.h</FILENAME>
+      <LINE>32</LINE>
+      <COLUMN>17</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Car::CompareSeats' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Car::CompareSeats</FUNCTION>
+    <DECORATED>?CompareSeats@Car@@QEAA_NH@Z</DECORATED>
+    <FUNCLINE>32</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
   <DEFECT>
     <SFA>
       <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
       <FILENAME>PointOfService.cpp</FILENAME>
-      <LINE>5</LINE>
+      <LINE>7</LINE>
       <COLUMN>16</COLUMN>
     </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Variable 'PointOfService::Age' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <DEFECTCODE>26455</DEFECTCODE>
+    <DESCRIPTION>Default constructor may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
     <FUNCTION>PointOfService::{ctor}</FUNCTION>
     <DECORATED>??0PointOfService@@QEAA@XZ</DECORATED>
-    <FUNCLINE>5</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>PointOfService::Age</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-      <FILENAME>PointOfService.cpp</FILENAME>
-      <LINE>5</LINE>
-      <COLUMN>16</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Variable 'PointOfService::Extra1' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
-    <FUNCTION>PointOfService::{ctor}</FUNCTION>
-    <DECORATED>??0PointOfService@@QEAA@XZ</DECORATED>
-    <FUNCLINE>5</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>PointOfService::Extra1</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-      <FILENAME>PointOfService.cpp</FILENAME>
-      <LINE>5</LINE>
-      <COLUMN>16</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Variable 'PointOfService::Model' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
-    <FUNCTION>PointOfService::{ctor}</FUNCTION>
-    <DECORATED>??0PointOfService@@QEAA@XZ</DECORATED>
-    <FUNCLINE>5</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>PointOfService::Model</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-      <FILENAME>PointOfService.cpp</FILENAME>
-      <LINE>5</LINE>
-      <COLUMN>16</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Variable 'PointOfService::Extra2' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
-    <FUNCTION>PointOfService::{ctor}</FUNCTION>
-    <DECORATED>??0PointOfService@@QEAA@XZ</DECORATED>
-    <FUNCLINE>5</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>PointOfService::Extra2</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-      <FILENAME>PointOfService.cpp</FILENAME>
-      <LINE>5</LINE>
-      <COLUMN>16</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>Variable 'PointOfService::Make' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
-    <FUNCTION>PointOfService::{ctor}</FUNCTION>
-    <DECORATED>??0PointOfService@@QEAA@XZ</DECORATED>
-    <FUNCLINE>5</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>PointOfService::Make</targetSymbol>
-    </ADDITIONALINFO>
+    <FUNCLINE>7</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
 </DEFECTS>

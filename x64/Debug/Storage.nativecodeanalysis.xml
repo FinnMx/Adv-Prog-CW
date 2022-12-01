@@ -3,15 +3,85 @@
   <DEFECT>
     <SFA>
       <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-      <FILENAME>Storage.cpp</FILENAME>
-      <LINE>161</LINE>
-      <COLUMN>27</COLUMN>
+      <FILENAME>Vehicle.h</FILENAME>
+      <LINE>74</LINE>
+      <COLUMN>26</COLUMN>
     </SFA>
-    <DEFECTCODE>26451</DEFECTCODE>
-    <DESCRIPTION>Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2).</DESCRIPTION>
-    <FUNCTION>Storage::RetrieveVehicleInfo</FUNCTION>
-    <DECORATED>?RetrieveVehicleInfo@Storage@@QEAAXH@Z</DECORATED>
-    <FUNCLINE>160</FUNCLINE>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Vehicle::GetAge' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Vehicle::GetAge</FUNCTION>
+    <DECORATED>?GetAge@Vehicle@@IEAA?BHXZ</DECORATED>
+    <FUNCLINE>74</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Bike.h</FILENAME>
+      <LINE>29</LINE>
+      <COLUMN>18</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Bike::CompareWheels' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Bike::CompareWheels</FUNCTION>
+    <DECORATED>?CompareWheels@Bike@@QEAA_NH@Z</DECORATED>
+    <FUNCLINE>29</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Bike.h</FILENAME>
+      <LINE>33</LINE>
+      <COLUMN>18</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Bike::CompareEng' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Bike::CompareEng</FUNCTION>
+    <DECORATED>?CompareEng@Bike@@QEAA_NH@Z</DECORATED>
+    <FUNCLINE>33</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Car.h</FILENAME>
+      <LINE>28</LINE>
+      <COLUMN>17</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Car::CompareDoors' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Car::CompareDoors</FUNCTION>
+    <DECORATED>?CompareDoors@Car@@QEAA_NH@Z</DECORATED>
+    <FUNCLINE>28</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Car.h</FILENAME>
+      <LINE>32</LINE>
+      <COLUMN>17</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Car::CompareSeats' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Car::CompareSeats</FUNCTION>
+    <DECORATED>?CompareSeats@Car@@QEAA_NH@Z</DECORATED>
+    <FUNCLINE>32</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Storage.cpp</FILENAME>
+      <LINE>18</LINE>
+      <COLUMN>12</COLUMN>
+    </SFA>
+    <DEFECTCODE>26447</DEFECTCODE>
+    <DESCRIPTION>The function is declared 'noexcept' but calls function 'WriteToDisk()' which may throw exceptions (f.6).</DESCRIPTION>
+    <FUNCTION>Storage::{dtor}</FUNCTION>
+    <DECORATED>??1Storage@@QEAA@XZ</DECORATED>
+    <FUNCLINE>17</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
 </DEFECTS>
