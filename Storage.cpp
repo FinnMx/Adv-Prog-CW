@@ -55,7 +55,6 @@ void Storage::ReadFromDisk(std::string dir) {
 	}
 }
 
-//Cars and Bike should know where to save themselves
 void Storage::WriteToDisk() {
 	std::list<Vehicle*>::iterator it(vehicles.begin());
 	while (it != vehicles.end()) {
@@ -63,21 +62,22 @@ void Storage::WriteToDisk() {
 	}
 }
 
+//make an int or bool and regturn the ting
 void Storage::AddVehicle(std::string model, std::string make, std::string reg, int age, int extra1, int extra2, int op) {
-	switch (op) {
-	case 1:
-	{
-		Car* c = new Car(reg, make, model, age, extra1, extra2);
-		vehicles.push_back(c);
-	}
-	break;
-	case 2:
-	{
-		Bike* b = new Bike(reg, make, model, age, extra1, extra2);
-		vehicles.push_back(b);
-	}
-	break;
-	}
+	SearchByReg(reg);
+	if (ReturnedFromSearch.size() == 0)
+		(this->*Choice[op])(model, make, reg, age, extra1, extra2);
+	ReturnedFromSearch.clear();
+}
+
+void Storage::AddCar(std::string model, std::string make, std::string reg, int age, int extra1, int extra2) {
+	Car* c = new Car(reg, make, model, age, extra1, extra2);
+	vehicles.push_back(c);
+}
+
+void Storage::AddBike(std::string model, std::string make, std::string reg, int age, int extra1, int extra2) {
+	Bike* b = new Bike(reg, make, model, age, extra1, extra2);
+	vehicles.push_back(b);
 }
 
 void Storage::RemoveVehicle(std::string reg) {

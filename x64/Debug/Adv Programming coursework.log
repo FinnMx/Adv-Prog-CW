@@ -1,4 +1,8 @@
 ﻿  PointOfService.cpp
+  Storage.cpp
+C:\Users\New Owner\Desktop\MEMORY CLEANING ADVPROG\Adv-Prog-CW\Storage.cpp(193,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  main.cpp
+  Generating Code...
 C:\Users\New Owner\Desktop\MEMORY CLEANING ADVPROG\Adv-Prog-CW\PointOfService.cpp(121): warning C4715: 'PointOfService::HandleUserInput': not all control paths return a value
 C:\Users\New Owner\Desktop\MEMORY CLEANING ADVPROG\Adv-Prog-CW\PointOfService.cpp(198): warning C4715: 'PointOfService::DisplaySearchMenu': not all control paths return a value
   Adv Programming coursework.vcxproj -> C:\Users\New Owner\Desktop\MEMORY CLEANING ADVPROG\Adv-Prog-CW\x64\Debug\Adv Programming coursework.exe

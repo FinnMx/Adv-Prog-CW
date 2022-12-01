@@ -29,6 +29,11 @@ public:
 	void SaveRecords();
 
 	void AddVehicle(std::string model, std::string make, std::string reg, int age, int extra1, int extra2, int op);
+	//func pointer array to remove switch statement within addvehicle
+	void (Storage::* Choice[2])(std::string, std::string, std::string, int, int, int) = { &Storage::AddCar,&Storage::AddBike };
+	void AddCar(std::string model, std::string make, std::string reg, int age, int extra1, int extra2);
+	void AddBike(std::string model, std::string make, std::string reg, int age, int extra1, int extra2);
+
 	void RemoveVehicle(std::string reg);
 
 	void SortByCost();
