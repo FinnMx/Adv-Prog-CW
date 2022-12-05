@@ -1,54 +1,119 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><DEFECTS><DEFECT>
     <SFA>
       <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Record.h</FILENAME>
+      <LINE>30</LINE>
+      <COLUMN>28</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Record::ReturnCost' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Record::ReturnCost</FUNCTION>
+    <DECORATED>?ReturnCost@Record@@QEAA?BNXZ</DECORATED>
+    <FUNCLINE>30</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Record.h</FILENAME>
+      <LINE>34</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Record::ReturnDays' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Record::ReturnDays</FUNCTION>
+    <DECORATED>?ReturnDays@Record@@QEAA?BHXZ</DECORATED>
+    <FUNCLINE>34</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
       <FILENAME>Vehicle.h</FILENAME>
-      <LINE>74</LINE>
+      <LINE>75</LINE>
       <COLUMN>26</COLUMN>
     </SFA>
     <DEFECTCODE>26440</DEFECTCODE>
     <DESCRIPTION>Function 'Vehicle::GetAge' can be declared 'noexcept' (f.6).</DESCRIPTION>
     <FUNCTION>Vehicle::GetAge</FUNCTION>
     <DECORATED>?GetAge@Vehicle@@IEAA?BHXZ</DECORATED>
-    <FUNCLINE>74</FUNCLINE>
+    <FUNCLINE>75</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Vehicle.h</FILENAME>
+      <LINE>95</LINE>
+      <COLUMN>20</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Vehicle::ReturnNextRecNum' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Vehicle::ReturnNextRecNum</FUNCTION>
+    <DECORATED>?ReturnNextRecNum@Vehicle@@QEAAHXZ</DECORATED>
+    <FUNCLINE>95</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Vehicle.h</FILENAME>
+      <LINE>103</LINE>
+      <COLUMN>27</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Vehicle::RegLetter' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Vehicle::RegLetter</FUNCTION>
+    <DECORATED>?RegLetter@Vehicle@@QEAA?BDXZ</DECORATED>
+    <FUNCLINE>103</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
+      <FILENAME>Vehicle.h</FILENAME>
+      <LINE>107</LINE>
+      <COLUMN>20</COLUMN>
+    </SFA>
+    <DEFECTCODE>26440</DEFECTCODE>
+    <DESCRIPTION>Function 'Vehicle::CompareReg' can be declared 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>Vehicle::CompareReg</FUNCTION>
+    <DECORATED>?CompareReg@Vehicle@@QEAAHPEBD@Z</DECORATED>
+    <FUNCLINE>107</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
       <FILENAME>Bike.h</FILENAME>
-      <LINE>29</LINE>
+      <LINE>28</LINE>
       <COLUMN>18</COLUMN>
     </SFA>
     <DEFECTCODE>26440</DEFECTCODE>
     <DESCRIPTION>Function 'Bike::CompareWheels' can be declared 'noexcept' (f.6).</DESCRIPTION>
     <FUNCTION>Bike::CompareWheels</FUNCTION>
     <DECORATED>?CompareWheels@Bike@@QEAA_NH@Z</DECORATED>
-    <FUNCLINE>29</FUNCLINE>
+    <FUNCLINE>28</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
       <FILENAME>Bike.h</FILENAME>
-      <LINE>33</LINE>
+      <LINE>32</LINE>
       <COLUMN>18</COLUMN>
     </SFA>
     <DEFECTCODE>26440</DEFECTCODE>
     <DESCRIPTION>Function 'Bike::CompareEng' can be declared 'noexcept' (f.6).</DESCRIPTION>
     <FUNCTION>Bike::CompareEng</FUNCTION>
     <DECORATED>?CompareEng@Bike@@QEAA_NH@Z</DECORATED>
-    <FUNCLINE>33</FUNCLINE>
+    <FUNCLINE>32</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
       <FILENAME>Bike.cpp</FILENAME>
-      <LINE>16</LINE>
+      <LINE>11</LINE>
       <COLUMN>13</COLUMN>
     </SFA>
     <DEFECTCODE>26440</DEFECTCODE>
     <DESCRIPTION>Function 'Bike::ReturnCost' can be declared 'noexcept' (f.6).</DESCRIPTION>
     <FUNCTION>Bike::ReturnCost</FUNCTION>
     <DECORATED>?ReturnCost@Bike@@MEAANXZ</DECORATED>
-    <FUNCLINE>16</FUNCLINE>
+    <FUNCLINE>11</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
@@ -105,32 +170,6 @@
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-      <FILENAME>Record.cpp</FILENAME>
-      <LINE>14</LINE>
-      <COLUMN>21</COLUMN>
-    </SFA>
-    <DEFECTCODE>26440</DEFECTCODE>
-    <DESCRIPTION>Function 'Record::ReturnCost' can be declared 'noexcept' (f.6).</DESCRIPTION>
-    <FUNCTION>Record::ReturnCost</FUNCTION>
-    <DECORATED>?ReturnCost@Record@@QEAA?BNXZ</DECORATED>
-    <FUNCLINE>14</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT><DEFECT>
-    <SFA>
-      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-      <FILENAME>Record.cpp</FILENAME>
-      <LINE>18</LINE>
-      <COLUMN>18</COLUMN>
-    </SFA>
-    <DEFECTCODE>26440</DEFECTCODE>
-    <DESCRIPTION>Function 'Record::ReturnDays' can be declared 'noexcept' (f.6).</DESCRIPTION>
-    <FUNCTION>Record::ReturnDays</FUNCTION>
-    <DECORATED>?ReturnDays@Record@@QEAA?BHXZ</DECORATED>
-    <FUNCLINE>18</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT><DEFECT>
-    <SFA>
-      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
       <FILENAME>Storage.cpp</FILENAME>
       <LINE>18</LINE>
       <COLUMN>12</COLUMN>
@@ -140,44 +179,5 @@
     <FUNCTION>Storage::{dtor}</FUNCTION>
     <DECORATED>??1Storage@@QEAA@XZ</DECORATED>
     <FUNCLINE>17</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT><DEFECT>
-    <SFA>
-      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-      <FILENAME>Vehicle.cpp</FILENAME>
-      <LINE>109</LINE>
-      <COLUMN>13</COLUMN>
-    </SFA>
-    <DEFECTCODE>26440</DEFECTCODE>
-    <DESCRIPTION>Function 'Vehicle::ReturnNextRecNum' can be declared 'noexcept' (f.6).</DESCRIPTION>
-    <FUNCTION>Vehicle::ReturnNextRecNum</FUNCTION>
-    <DECORATED>?ReturnNextRecNum@Vehicle@@QEAAHXZ</DECORATED>
-    <FUNCLINE>109</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT><DEFECT>
-    <SFA>
-      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-      <FILENAME>Vehicle.cpp</FILENAME>
-      <LINE>126</LINE>
-      <COLUMN>20</COLUMN>
-    </SFA>
-    <DEFECTCODE>26440</DEFECTCODE>
-    <DESCRIPTION>Function 'Vehicle::RegLetter' can be declared 'noexcept' (f.6).</DESCRIPTION>
-    <FUNCTION>Vehicle::RegLetter</FUNCTION>
-    <DECORATED>?RegLetter@Vehicle@@QEAA?BDXZ</DECORATED>
-    <FUNCLINE>126</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT><DEFECT>
-    <SFA>
-      <FILEPATH>C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\</FILEPATH>
-      <FILENAME>Vehicle.cpp</FILENAME>
-      <LINE>130</LINE>
-      <COLUMN>13</COLUMN>
-    </SFA>
-    <DEFECTCODE>26440</DEFECTCODE>
-    <DESCRIPTION>Function 'Vehicle::CompareReg' can be declared 'noexcept' (f.6).</DESCRIPTION>
-    <FUNCTION>Vehicle::CompareReg</FUNCTION>
-    <DECORATED>?CompareReg@Vehicle@@QEAAHPEBD@Z</DECORATED>
-    <FUNCLINE>130</FUNCLINE>
     <PATH></PATH>
   </DEFECT></DEFECTS>

@@ -16,22 +16,19 @@ Storage::Storage() : v(v){
 
 Storage::~Storage() {
 	WriteToDisk();
-	for (Vehicle* v : vehicles) {
+	for (Vehicle* v : ReturnedFromSearch) {
 		delete v;
 		v = nullptr;
 	}
-	for (Vehicle* v : ReturnedFromSearch) {
+	for (Vehicle* v : vehicles) {
 		delete v;
 		v = nullptr;
 	}
 }
 
-void Storage::DisplayAllVehicles() {
-	std::list<Vehicle*>::iterator it;
-	for (it = vehicles.begin(); it != vehicles.end(); it++) {
-		(**it).DisplayToMenu();
-	}
-}
+//----------------------------------------------------------------------------
+//--------------------------------INIT METHODS--------------------------------
+//----------------------------------------------------------------------------
 
 void Storage::ReadFromDisk(std::string dir) {
 	//routine to get a list of each doccument in the vehicle list folder using c++ 17 filesystem lib...
@@ -63,10 +60,14 @@ void Storage::WriteToDisk() {
 	}
 }
 
+//----------------------------------------------------------------------------
+//-----------------------------ADD/REMOVE METHODS-----------------------------
+//----------------------------------------------------------------------------
+
 void Storage::AddVehicle(std::string& model, std::string& make, std::string& reg, int& age, int& extra1, int& extra2, int op) {
 	SearchByReg(reg);
 	if (ReturnedFromSearch.size() == 0)
-		(this->*Choice[op])(model, make, reg, age, extra1, extra2);
+		(this->*Choice[op - 1])(model, make, reg, age, extra1, extra2);
 	else
 		std::cout << "\nVehicle cannot be added as it already exists..." << std::endl;
 	ReturnedFromSearch.clear();
@@ -95,13 +96,9 @@ void Storage::RemoveVehicle(std::string reg) {
 	}
 }
 
-void Storage::SortByCost() {
-	vehicles.sort(CompareCost());
-}
-
-void Storage::SortByReg() {
-	vehicles.sort(CompareReg());
-}
+//----------------------------------------------------------------------------
+//-----------------------------SORTING/SEARCHING------------------------------
+//----------------------------------------------------------------------------
 
 void Storage::SearchByReg(std::string reg) {
 	std::list<Vehicle*>::iterator it(vehicles.begin());
@@ -136,7 +133,7 @@ void Storage::SearchByDoors(int doors) {
 void Storage::SearchByEngine(int engsize) {
 	std::list<Vehicle*>::iterator it(vehicles.begin());
 	while (it != vehicles.end()) {
-		if (typeid(**it) == typeid(Bike) && dynamic_cast<Bike*>(*it)->CompareWheels(engsize)) {
+		if (typeid(**it) == typeid(Bike) && dynamic_cast<Bike*>(*it)->CompareEng(engsize)) {
 			ReturnedFromSearch.push_back(*it);
 		}
 		it++;
@@ -152,6 +149,10 @@ void Storage::SearchByWheels(int wheels) {
 		it++;
 	}
 }
+
+//----------------------------------------------------------------------------
+//----------------------------RECORD MENU METHODS-----------------------------
+//----------------------------------------------------------------------------
 
 void Storage::DisplaySearchResults() {
 	for(Vehicle* var : ReturnedFromSearch)
@@ -174,34 +175,9 @@ bool Storage::RetrieveVehicleInfo(int op) {
 
 }
 
-//this method could be classified as pointless considering the fact that we have already returned the state of records, 
-//however another menu (without a display records) would need to be implemented if we were to remove this.
-//additionally were reusing another function to actually check the state so it isnt the most stupid way of doing this.
-bool Storage::DoRecordsExist() {
-	if (!(v->ReturnNextRecNum() - 1))
-		return false;
-	else
-		return true;
-}
-
-void Storage::DisplayVehicleInfo() {
-	v->DisplaySpecifics();
-}
-
-void Storage::SaveRecords(){
-	v->SaveRecords();
-}
-
-void Storage::InsertRecord(int days, std::string name, std::string address) {
-	srand(time(nullptr));
-	int randID = 1 + (std::rand() % (1000));
-
-	Record r(v->ReturnNextRecNum(), ReturnDate(0), ReturnDate(days), days, v->ReturnTotalCost(days), name, address, randID);
-	v->InsertRecord(r);
-}
 //i couldnt figure out a way to get a future date based on days rented, i saw some librarys e.t.c online but it seems like
 //more effort than what its worth, it isnt really an integral part of the system. i could of just forced the user to enter formatted
-//dates but this seems unintuitive.
+//dates but that seemed unintuitive.
 std::string Storage::ReturnDate(int offset) {
 	std::time_t t = std::time(0);
 	std::tm* date = std::localtime(&t);
@@ -210,9 +186,4 @@ std::string Storage::ReturnDate(int offset) {
 	std::string year = std::to_string(date->tm_year + 1900);
 	std::string formatted = day.append("/").append(month).append("/").append(year);
 	return formatted;
-}
-
-void Storage::DisplayRecord(int& record) {
-	v->DisplaySpecifics();
-	v->DisplayRecord(record);
 }

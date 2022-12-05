@@ -9,25 +9,25 @@ PointOfService::PointOfService() {
 }
 
 PointOfService::~PointOfService() {
-
+	
 }
 
 //----------------------------------------------------------------------------
 //-------------------------------ERROR HANDLING-------------------------------
 //----------------------------------------------------------------------------
 
-const int PointOfService::GetIntChoice() {
+const int PointOfService::GetIntChoice(int min, int max) {
 	std::cin.clear();
 	std::cout << "\n-->: ";
 	int Input = 0;
 	std::cin >> Input;
 
-	while (!std::cin.good()) {
+	while (!std::cin.good() || Input < min || Input > max) {
 		std::cout << "\nINVALID INPUT..." << std::endl;
 		std::cin.clear();
 		std::cin.ignore(INT_MAX, '\n');
 
-		std::cout << "\nPlease enter a number: ";
+		std::cout << "\nPlease enter a valid number between" << min << " - " << max << ": ";
 		std::cin >> std::setw(1) >> Input;
 	}
 	return Input;
@@ -75,22 +75,116 @@ bool PointOfService::CheckRegChars(std::string reg){
 }
 
 //----------------------------------------------------------------------------
-//--------------------------------ACTUAL CODE---------------------------------
+//-----------------------------------MENUS------------------------------------
 //----------------------------------------------------------------------------
 
-void PointOfService::DisplayMenu() {
-	do{
-		std::cout << "Vehicle Rental System\n---------------------\n" << std::endl;
-		std::cout << "Registration Number          Cost Per Day          Vehicle Type" << std::endl;
-		std::cout << "-------------------          ------------          ------------" << std::endl;
-		storage.DisplayAllVehicles();
-
-	} while (HandleUserInput());
+void PointOfService::CarSearchMenu() {
+	std::cout << "Search for a car by:\n--------------------\n1) Registration number\n2) Number of seats\n3) Number of doors\n9) Return to main menu" << std::endl;
+	switch (GetIntChoice(1, 9)) {
+	case 1:
+		std::cin.ignore();
+		std::cout << "\nPlease enter the Registration:" << std::endl;
+		storage.SearchByReg(GetRegChoice());
+		break;
+	case 2:
+		std::cout << "\nPlease enter the amount of seats:" << std::endl;
+		storage.SearchBySeats(GetIntChoice(1, 10));
+		break;
+	case 3:
+		std::cout << "\nPlease enter the amount of doors:" << std::endl;
+		storage.SearchByDoors(GetIntChoice(1, 10));
+		break;
+	default:
+		return;
+		break;
+	}
+	SearchCont(DisplaySearchMenu());
 }
+
+void PointOfService::BikeSearchMenu() {
+	std::string input;
+	std::cout << "Search for a Bike by:\n--------------------\n1) Registration number\n2) Engine Size\n3) Number of wheels\n9) Return to main menu" << std::endl;
+	switch (GetIntChoice(1, 9)) {
+	case 1:
+		std::cin.ignore();
+		std::cout << "\nPlease enter the Registration:" << std::endl;
+		storage.SearchByReg(GetRegChoice());
+		break;
+	case 2:
+		std::cout << "\nPlease enter the Engine size:" << std::endl;
+		storage.SearchByEngine(GetIntChoice(50, 2500));
+		break;
+	case 3:
+		std::cout << "\nPlease enter the amount of Wheels:" << std::endl;
+		storage.SearchByWheels(GetIntChoice(1, 3));
+		break;
+	default:
+		return;
+		break;
+	}
+	SearchCont(DisplaySearchMenu());
+}
+
+int PointOfService::DisplaySearchMenu() {
+	int Input = 0;
+	std::cout << "\nRegistration Number" << "     " << "Cost Per Day" << "	    " << "Make" << "        " << "Model" << std::endl;
+	std::cout << "-------------------" << "     " << "------------" << "	    " << "----" << "        " << "-----" << std::endl;
+	storage.DisplaySearchResults();
+	std::cout << "\nPlease enter a number to choose the vehicle, or any number to return to main menu: " << std::endl;
+	Input = GetIntChoice(0, INT_MAX);
+	if (storage.RetrieveVehicleInfo(Input))
+		return Input;
+	else
+		DisplayMenu();
+}
+
+void PointOfService::RecordsMenu() {
+	int index = 0;
+	int Input = 0;
+	if (storage.DoRecordsExist()) {
+		while (Input != 9) {
+			storage.DisplayRecord(index);
+			std::cout << "\n1) View the previous record\n2) View the next record\n9) Return to vehicle information screen" << std::endl;
+			std::cin >> Input;
+			if (Input == 1)
+				index--;
+			else if (Input == 2)
+				index++;
+		}
+	}
+}
+
+void PointOfService::SearchCont(int VehicleIndex) {
+	int op = 0;
+	while (op != 9) {
+		storage.DisplayVehicleInfo();
+		std::cout << "\n1) Rent Vehicle\n2) View historic rentals\n9) Return to main menu" << std::endl;
+		op = GetIntChoice(1, 9);
+		switch (op) {
+		case 1:
+			RentVehicle();
+			break;
+		case 2:
+			RecordsMenu();
+			break;
+		case 9:
+			storage.SaveRecords();
+			//system("CLS");
+			break;
+		default:
+			std::cout << "\nPlease enter a valid choice..." << std::endl;
+			break;
+		}
+	}
+}
+
+//----------------------------------------------------------------------------
+//----------------------------EXTRA INPUT QUERIES-----------------------------
+//----------------------------------------------------------------------------
 
 bool PointOfService::HandleUserInput() {
 	std::cout << "\n1)Add Vehicle\n2)Remove Vehicle\n3)Search for a Car\n4)Search for a bike\n5)Sort Vehicles by registration number\n6)Sort by cost per day\n9)Exit\n" << std::endl;
-	switch (GetIntChoice())
+	switch (GetIntChoice(1,9))
 	{
 	case 1:
 		AddVehicle();
@@ -118,94 +212,10 @@ bool PointOfService::HandleUserInput() {
 	}
 }
 
-void PointOfService::CarSearchMenu() {
-	std::cout << "Search for a car by:\n--------------------\n1) Registration number\n2) Number of seats\n3) Number of doors\n9) Return to main menu" << std::endl;
-	switch (GetIntChoice()) {
-	case 1:
-		std::cin.ignore();
-		std::cout << "\nPlease enter the Registration:" << std::endl;
-		storage.SearchByReg(GetRegChoice());
-		break;
-	case 2:
-		std::cout << "\nPlease enter the amount of seats:" << std::endl;
-		storage.SearchBySeats(GetIntChoice());
-		break;
-	case 3:
-		std::cout << "\nPlease enter the amount of doors:" << std::endl;
-		storage.SearchByDoors(GetIntChoice());
-		break;
-	default:
-		return;
-		break;
-	}
-	SearchCont(DisplaySearchMenu());
-}
-
-void PointOfService::BikeSearchMenu() {
-	std::string input;
-	std::cout << "Search for a Bike by:\n--------------------\n1) Registration number\n2) Engine Size\n3) Number of wheels\n9) Return to main menu" << std::endl;
-	switch (GetIntChoice()) {
-	case 1:
-		std::cin.ignore();
-		std::cout << "\nPlease enter the Registration:" << std::endl;
-		storage.SearchByReg(GetRegChoice());
-		break;
-	case 2:
-		std::cout << "\nPlease enter the Engine size:" << std::endl;
-		storage.SearchByEngine(GetIntChoice());
-		break;
-	case 3:
-		std::cout << "\nPlease enter the amount of Wheels:" << std::endl;
-		storage.SearchByWheels(GetIntChoice());
-		break;
-	default:
-		return;
-		break;
-	}
-	SearchCont(DisplaySearchMenu());
-}
-
-void PointOfService::SearchCont(int VehicleIndex) {
-	int op = 0;
-	while(op != 9){
-		storage.DisplayVehicleInfo();
-		std::cout << "\n1) Rent Vehicle\n2) View historic rentals\n9) Return to main menu" << std::endl;
-		op = GetIntChoice();
-		switch (op) {
-		case 1:
-			RentVehicle();
-			break;
-		case 2:
-			RecordsMenu();
-			break;
-		case 9:
-			storage.SaveRecords();
-			system("CLS");
-			break;
-		default:
-			std::cout << "\nPlease enter a valid choice..." << std::endl;
-			break;
-		}
-	}
-}
-
-int PointOfService::DisplaySearchMenu() {
-	int Input = 0;
-	std::cout << "\nRegistration Number" << "     " << "Cost Per Day" << "	    " << "Make" << "        " << "Model" << std::endl;
-	std::cout << "-------------------" << "     " << "------------" << "	    " << "----" << "        " << "-----" << std::endl;
-	storage.DisplaySearchResults();
-	std::cout << "\nPlease enter a number to choose the vehicle, or any number to return to main menu: " << std::endl;
-	Input = GetIntChoice();
-	if (storage.RetrieveVehicleInfo(Input))
-		return Input;
-	else
-		DisplayMenu();
-}
-
 void PointOfService::RentVehicle() {
 	std::string name, address, number;
-	std::cout << "\nHow many days do you want to rent the vehicle for: " << std::endl;
-	int days = GetIntChoice();
+	std::cout << "\nHow many days do you want to rent the vehicle for (Up to 2 months): " << std::endl;
+	int days = GetIntChoice(1,60);
 	std::cout << "\nPlease enter your full name: " << std::endl;
 	std::cin.ignore();
 	name = GetStringChoice();
@@ -214,24 +224,11 @@ void PointOfService::RentVehicle() {
 	address = GetStringChoice();
 	std::cout << "\nPlease enter your postcode: " << std::endl;
 	std::cin.clear();
-	address = address.append(GetStringChoice());
-	storage.InsertRecord(days,name,address);
-}
-
-void PointOfService::RecordsMenu() {
-	int index = 0;
-	int Input = 0;
-	if(storage.DoRecordsExist()){
-		while (Input != 9) {
-			storage.DisplayRecord(index);
-			std::cout << "\n1) View the previous record\n2) View the next record\n9) Return to vehicle information screen" << std::endl;
-			std::cin >> Input;
-			if (Input == 1)
-				index--;
-			else if (Input == 2)
-				index++;
-		}
-	}
+	address = address.append(", ").append(GetStringChoice());
+	std::cout << "\nPlease enter your phone number: " << std::endl;
+	std::cin.clear();
+	number = GetStringChoice(); // taking phone number as a string due to octal issues i.e numbers starting with 0...
+	storage.InsertRecord(days,name,address,number);
 }
 
 void PointOfService::HandleVehicleInput(std::string& Model, std::string& Make, std::string& Reg, int& age) {
@@ -243,38 +240,36 @@ void PointOfService::HandleVehicleInput(std::string& Model, std::string& Make, s
 	std::cout << "Please enter the Reg" << std::endl;
 	Reg = GetRegChoice();
 	std::cout << "Please enter the Age" << std::endl;
-	age = GetIntChoice();
+	age = GetIntChoice(1,100);
 }
+
+//----------------------------------------------------------------------------
+//--------------------------------ADD/REMOVE----------------------------------
+//----------------------------------------------------------------------------
 
 void PointOfService::AddVehicle() {
 	int Extra1, Extra2, Age, Input;
 	std::string Model, Make, Reg;
 	std::cout << "\nPlease Select An Option:\n1)Car\n2)Bike" << std::endl;
-	Input = GetIntChoice();
+	Input = GetIntChoice(1,9);
 	HandleVehicleInput(Model, Make, Reg, Age);
 	switch (Input)
 	{
 	case 1:
 		std::cout << "Please enter the number of doors" << std::endl;
-		Extra1 = GetIntChoice();
+		Extra1 = GetIntChoice(1,10);
 		std::cout << "Please enter the number of seats" << std::endl;
-		Extra2 = GetIntChoice();
+		Extra2 = GetIntChoice(1,10);
 		break;
 	case 2:
 		std::cout << "Please enter the engine size" << std::endl;
-		Extra1 = GetIntChoice();
+		Extra1 = GetIntChoice(50,2500);
 		std::cout << "Please enter the number of wheels" << std::endl;
-		Extra2 = GetIntChoice();
+		Extra2 = GetIntChoice(1,3);
 		break;
 	default:
 		std::cout << "Invalid entry, returning to menu" << std::endl;
 		break;
 	}
 	storage.AddVehicle(Model, Make, Reg, Age, Extra1, Extra2, Input);
-}
-
-void PointOfService::RemoveVehicle() {
-	std::cout << "\nPlease enter the registration of the vehicle you want to remove:" << std::endl;
-	std::cin.ignore();
-	storage.RemoveVehicle(GetRegChoice());
 }

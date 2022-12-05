@@ -20,7 +20,7 @@ public:
 
 	bool DoRecordsExist();
 
-	void InsertRecord(int days, std::string name, std::string address);
+	void InsertRecord(int days, std::string name, std::string address, std::string number);
 	void SaveRecords();
 
 	void AddVehicle(std::string& model, std::string& make, std::string& reg, int& age, int& extra1, int& extra2, int op);
@@ -39,14 +39,14 @@ private:
 	const std::string BikeDir = "Bikes/";
 	const std::string CarDir = "Cars/";
 
+	void AddCar(std::string model, std::string make, std::string reg, int age, int extra1, int extra2);
+	void AddBike(std::string model, std::string make, std::string reg, int age, int extra1, int extra2);
+	void (Storage::* Choice[2])(std::string, std::string, std::string, int, int, int) = { &Storage::AddCar,&Storage::AddBike };
+
 	void ReadFromDisk(std::string dir);
 	void WriteToDisk();
 
-	void AddCar(std::string model, std::string make, std::string reg, int age, int extra1, int extra2);
-	void AddBike(std::string model, std::string make, std::string reg, int age, int extra1, int extra2);
 	std::string ReturnDate(int offset);
-	//func pointer array to remove switch statement within addvehicle
-	void (Storage::* Choice[2])(std::string, std::string, std::string, int, int, int) = { &Storage::AddCar,&Storage::AddBike };
 
 	std::list<Vehicle*> vehicles;
 	std::vector<Vehicle*> ReturnedFromSearch;
@@ -55,3 +55,59 @@ private:
 	int index = 0;
 
 };
+
+//----------------------------------------------------------------------------
+//----------------------------RECORD MENU METHODS-----------------------------
+//----------------------------------------------------------------------------
+
+inline void Storage::DisplayRecord(int& record) {
+	v->DisplaySpecifics();
+	v->DisplayRecord(record);
+}
+
+//this method could be classified as pointless considering the fact that we have already returned the state of records, 
+//however another menu (without a display records) would need to be implemented if we were to remove this.
+//additionally were reusing another function to actually check the state so id say it that stupid of a way of doing this.
+inline bool Storage::DoRecordsExist() {
+	if (!(v->ReturnNextRecNum() - 1))
+		return false;
+	else
+		return true;
+}
+
+inline void Storage::DisplayVehicleInfo() {
+	v->DisplaySpecifics();
+}
+
+inline void Storage::SaveRecords() {
+	v->SaveRecords();
+}
+
+inline void Storage::InsertRecord(int days, std::string name, std::string address, std::string number) {
+	Record r(v->ReturnNextRecNum(), ReturnDate(0), ReturnDate(days), days, v->ReturnTotalCost(days), name, address, number);
+	v->InsertRecord(r);
+}
+
+//----------------------------------------------------------------------------
+//------------------------------SORTING METHODS-------------------------------
+//----------------------------------------------------------------------------
+
+
+inline void Storage::SortByCost() {
+	vehicles.sort(CompareCost());
+}
+
+inline void Storage::SortByReg() {
+	vehicles.sort(CompareReg());
+}
+
+//----------------------------------------------------------------------------
+//--------------------------------INIT METHODS--------------------------------
+//----------------------------------------------------------------------------
+
+inline void Storage::DisplayAllVehicles() {
+	std::list<Vehicle*>::iterator it;
+	for (it = vehicles.begin(); it != vehicles.end(); it++) {
+		(**it).DisplayToMenu();
+	}
+}

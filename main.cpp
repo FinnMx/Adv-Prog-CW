@@ -9,6 +9,9 @@
 namespace fs = std::experimental::filesystem;
 
 int main() {
+
+	std::ios_base::sync_with_stdio(false);
+
 #ifdef _DEBUG
 	  //_CrtSetBreakAlloc(254);
 	_onexit(_CrtDumpMemoryLeaks);

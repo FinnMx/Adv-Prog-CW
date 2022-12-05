@@ -4,6 +4,7 @@
 #include <string>
 #include <fstream>
 #include <list>
+#include <iomanip>
 #include "Record.h"
 class Vehicle
 {
@@ -46,13 +47,13 @@ private:
 	const double ReturnTotalRentedIncome();
 	const int ReturnTotalRentedDays();
 	void ResizeRecords();
-	//record array (might not be the best way to do this!)
+	//record array
 	size_t RECORD_SIZE;
 	size_t CURRENT_RECORDS;
 	Record* Records = new Record[RECORD_SIZE];
 
 	int VehicleAge;
-	//change so it can be dynamic
+
 	const char* VehicleModel;
 	const char* VehicleMake;
 	const char* VehicleReg;
@@ -73,6 +74,38 @@ struct CompareReg {
 
 inline const int Vehicle::GetAge() {
 	return VehicleAge;
+}
+
+//----------------------------------------------------------------------------
+//-------------------------------DISPLAY METHODS------------------------------
+//----------------------------------------------------------------------------
+
+inline void Vehicle::DisplayToMenu() {
+	std::cout << "     " << VehicleReg << "                   " << std::fixed << std::setprecision(2) << ReturnCost() << "                  " << GetType() << std::endl;
+}
+
+inline void Vehicle::DisplayToSearchMenu() {
+	std::cout << "   " << VehicleReg << "              " << std::fixed << std::setprecision(2) << ReturnCost() << "           " << VehicleMake << "        " << VehicleModel << std::endl;
+}
+
+//----------------------------------------------------------------------------
+//--------------------------------RECORD METHODS------------------------------
+//----------------------------------------------------------------------------
+
+inline int Vehicle::ReturnNextRecNum() {
+	return CURRENT_RECORDS + 1;
+}
+
+inline double Vehicle::ReturnTotalCost(int days) {
+	return (this->ReturnCost() * days);
+}
+
+inline const char Vehicle::RegLetter() {
+	return VehicleReg[0];
+}
+
+inline int Vehicle::CompareReg(const char* reg) {
+	return strcmp(VehicleReg, reg);
 }
 
 

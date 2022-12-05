@@ -8,19 +8,10 @@ Bike::~Bike() {
 
 }
 
-void Bike::WriteSelfToDisk() {
-	std::ofstream out(ReturnFilePath());
-	out << *this;
-}
-
 double Bike::ReturnCost() {
 	double cost = ((1500 + (double)EngSize) - ((1500 + EngSize) % 100)) / 100;
 	if (cost > 10)
 		return cost;
 	else
 		return 10.00;
-}
-
-std::string Bike::GetType() {
-	return "Bike";
 }

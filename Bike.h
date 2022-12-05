@@ -33,3 +33,11 @@ inline bool Bike::CompareEng(int engsize) {
 	return EngSize == engsize;
 }
 
+inline void Bike::WriteSelfToDisk() {
+	std::ofstream out(ReturnFilePath());
+	out << *this;
+}
+
+inline std::string Bike::GetType() {
+	return "Bike";
+}

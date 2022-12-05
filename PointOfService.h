@@ -11,7 +11,7 @@ public:
 
 private:
 	//	ERROR HANDLING
-	const int GetIntChoice();
+	const int GetIntChoice(int min, int max);
 	const std::string GetStringChoice();
 	const std::string GetRegChoice();
 	bool CheckRegChars(std::string reg);
@@ -32,3 +32,18 @@ private:
 	Storage storage = Storage();
 };
 
+inline void PointOfService::DisplayMenu() {
+	do {
+		std::cout << "Vehicle Rental System\n---------------------\n" << std::endl;
+		std::cout << "Registration Number          Cost Per Day          Vehicle Type" << std::endl;
+		std::cout << "-------------------          ------------          ------------" << std::endl;
+		storage.DisplayAllVehicles();
+
+	} while (HandleUserInput());
+}
+
+inline void PointOfService::RemoveVehicle() {
+	std::cout << "\nPlease enter the registration of the vehicle you want to remove:" << std::endl;
+	std::cin.ignore();
+	storage.RemoveVehicle(GetRegChoice());
+}

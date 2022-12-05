@@ -33,3 +33,12 @@ inline bool Car::CompareSeats(int seats) {
 	return SeatNum == seats;
 }
 
+inline void Car::WriteSelfToDisk() {
+	std::ofstream out(ReturnFilePath());
+	out << *this;
+}
+
+inline std::string Car::GetType() {
+
+	return "Car";
+}
