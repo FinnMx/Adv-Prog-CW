@@ -6,8 +6,7 @@ public:
 	PointOfService();
 	~PointOfService();
 
-	void DisplayMenu();
-	bool HandleUserInput();
+	int HandleUserInput();
 
 private:
 	//	ERROR HANDLING
@@ -16,6 +15,7 @@ private:
 	const std::string GetRegChoice();
 	bool CheckRegChars(std::string reg);
 
+	void DisplayMenu();
 	void CarSearchMenu();
 	void BikeSearchMenu();
 
@@ -31,16 +31,6 @@ private:
 
 	Storage storage = Storage();
 };
-
-inline void PointOfService::DisplayMenu() {
-	do {
-		std::cout << "Vehicle Rental System\n---------------------\n" << std::endl;
-		std::cout << "Registration Number          Cost Per Day          Vehicle Type" << std::endl;
-		std::cout << "-------------------          ------------          ------------" << std::endl;
-		storage.DisplayAllVehicles();
-
-	} while (HandleUserInput());
-}
 
 inline void PointOfService::RemoveVehicle() {
 	std::cout << "\nPlease enter the registration of the vehicle you want to remove:" << std::endl;

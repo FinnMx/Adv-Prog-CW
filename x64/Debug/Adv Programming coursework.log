@@ -1,4 +1,19 @@
-﻿  Storage.cpp
-C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Vehicle.h(96,28): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Storage.cpp(56,15): error C2382: 'Storage::WriteToDisk': redefinition; different exception specifications
-C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\Storage.h(47): message : see declaration of 'Storage::WriteToDisk'
+﻿  PointOfService.cpp
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\Vehicle.h(96,28): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\PointOfService.cpp(149): warning C4715: 'PointOfService::DisplaySearchMenu': not all control paths return a value
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\PointOfService.cpp(224): warning C4715: 'PointOfService::HandleUserInput': not all control paths return a value
+  Adv Programming coursework.vcxproj -> C:\Users\New Owner\Downloads\Adv-Prog-CW-main\x64\Debug\Adv Programming coursework.exe
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\Record.h(30): warning C26440: Function 'Record::ReturnCost' can be declared 'noexcept' (f.6).
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\Record.h(34): warning C26440: Function 'Record::ReturnDays' can be declared 'noexcept' (f.6).
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\Vehicle.h(75): warning C26440: Function 'Vehicle::GetAge' can be declared 'noexcept' (f.6).
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\Vehicle.h(95): warning C26440: Function 'Vehicle::ReturnNextRecNum' can be declared 'noexcept' (f.6).
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\Vehicle.h(103): warning C26440: Function 'Vehicle::RegLetter' can be declared 'noexcept' (f.6).
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\Vehicle.h(107): warning C26440: Function 'Vehicle::CompareReg' can be declared 'noexcept' (f.6).
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\Bike.h(28): warning C26440: Function 'Bike::CompareWheels' can be declared 'noexcept' (f.6).
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\Bike.h(32): warning C26440: Function 'Bike::CompareEng' can be declared 'noexcept' (f.6).
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\Bike.cpp(11): warning C26440: Function 'Bike::ReturnCost' can be declared 'noexcept' (f.6).
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\Car.h(28): warning C26440: Function 'Car::CompareDoors' can be declared 'noexcept' (f.6).
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\Car.h(32): warning C26440: Function 'Car::CompareSeats' can be declared 'noexcept' (f.6).
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\PointOfService.cpp(7): warning C26455: Default constructor may not throw. Declare it 'noexcept' (f.6).
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\Record.cpp(3): warning C26455: Default constructor may not throw. Declare it 'noexcept' (f.6).
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\Storage.cpp(18): warning C26447: The function is declared 'noexcept' but calls function 'WriteToDisk()' which may throw exceptions (f.6).

@@ -4,3 +4,6 @@ C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\x64\Debug\Adv Programming coursework.
 C:\Users\New Owner\Desktop\MEMORY CLEANING ADVPROG\Adv-Prog-CW\x64\Debug\Adv Programming coursework.exe
 C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\x64\Debug\Adv Programming coursework.exe.lastcodeanalysissucceeded
 C:\Users\Finn\Documents\GitHub\Adv-Prog-CW\x64\Debug\NativeCodeAnalysis.read.1.tlog
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\x64\Debug\Adv Programming coursework.exe
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\x64\Debug\Adv Programming coursework.exe.lastcodeanalysissucceeded
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\x64\Debug\NativeCodeAnalysis.read.1.tlog

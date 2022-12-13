@@ -5,7 +5,7 @@
 #include <algorithm>
 
 PointOfService::PointOfService() {
-
+	DisplayMenu();
 }
 
 PointOfService::~PointOfService() {
@@ -77,6 +77,16 @@ bool PointOfService::CheckRegChars(std::string reg){
 //----------------------------------------------------------------------------
 //-----------------------------------MENUS------------------------------------
 //----------------------------------------------------------------------------
+
+void PointOfService::DisplayMenu() {
+	do {
+		std::cout << "Vehicle Rental System\n---------------------\n" << std::endl;
+		std::cout << "Registration Number          Cost Per Day          Vehicle Type" << std::endl;
+		std::cout << "-------------------          ------------          ------------" << std::endl;
+		storage.DisplayAllVehicles();
+
+	} while (HandleUserInput() != 9);
+}
 
 void PointOfService::CarSearchMenu() {
 	std::cout << "Search for a car by:\n--------------------\n1) Registration number\n2) Number of seats\n3) Number of doors\n9) Return to main menu" << std::endl;
@@ -182,9 +192,10 @@ void PointOfService::SearchCont(int VehicleIndex) {
 //----------------------------EXTRA INPUT QUERIES-----------------------------
 //----------------------------------------------------------------------------
 
-bool PointOfService::HandleUserInput() {
+int PointOfService::HandleUserInput() {
 	std::cout << "\n1)Add Vehicle\n2)Remove Vehicle\n3)Search for a Car\n4)Search for a bike\n5)Sort Vehicles by registration number\n6)Sort by cost per day\n9)Exit\n" << std::endl;
-	switch (GetIntChoice(1,9))
+	int op = GetIntChoice(1, 9);
+	switch (op)
 	{
 	case 1:
 		AddVehicle();
@@ -205,7 +216,7 @@ bool PointOfService::HandleUserInput() {
 		storage.SortByCost();
 		break;
 	case 9:
-		return false;
+		return 9;
 		break;
 	default:
 		std::cout << "\nplease choose a given option..." << std::endl;

@@ -1,0 +1,11 @@
+﻿  PointOfService.cpp
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\Vehicle.h(96,28): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  main.cpp
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\Vehicle.h(96,28): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  Generating code
+C:\Users\New Owner\Downloads\Adv-Prog-CW-main\PointOfService.cpp(224): warning C4715: 'PointOfService::HandleUserInput': not all control paths return a value
+  4 of 629 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Adv Programming coursework.vcxproj -> C:\Users\New Owner\Downloads\Adv-Prog-CW-main\x64\Release\Adv Programming coursework.exe

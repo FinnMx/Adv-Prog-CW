@@ -37,7 +37,6 @@ int main() {
 
 
 	PointOfService pos = PointOfService();
-	pos.DisplayMenu();
 	
 	return 0;
 }
